@@ -1,4 +1,4 @@
 
-document.querySelector(".menu")?.addEventListener("click",()=>{
- document.querySelector(".links").classList.toggle("open")
-})
+document.querySelector(".hamburger").onclick=()=>{
+document.querySelector(".navlinks").style.display="flex"
+}
