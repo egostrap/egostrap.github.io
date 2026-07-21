@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download EgoStrap — Get the Roblox Bootstrapper</title>
+  <title>EgoStrap FAQ — Frequently Asked Questions</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -49,94 +50,107 @@
     </nav>
   </header>
 
-  <!-- Download Section Content -->
-  <main class="container dl-layout fade-in">
+  <!-- FAQ Main section -->
+  <main class="container fade-in" style="padding: 60px 24px;">
     
-    <!-- Left panel (Downloader and Guides) -->
-    <div class="dl-card">
-      <div class="dl-header-wrap">
-        <div class="feature-icon" style="width: 60px; height: 60px; font-size: 30px;">
-          <i class="fa fa-download"></i>
-        </div>
-        <div class="dl-title-group">
-          <h1>Download EgoStrap</h1>
-          <div class="dl-meta">
-            <span>Current Version: <strong>v1.2.0 (Latest)</strong></span>
-            <span>•</span>
-            <span>Released: <strong>July 2026</strong></span>
-          </div>
-        </div>
-      </div>
-
-      <p style="color: var(--text-gray); margin-bottom: 30px;">
-        Get the most advanced Roblox bootstrapper package. Safe, lightweight, open-source. Select your preferred distribution type below.
-      </p>
-
-      <!-- Action items -->
-      <div class="dl-actions-grid">
-        
-        <!-- Stable EXE -->
-        <div class="dl-row">
-          <div>
-            <h3 style="font-size: 16px; margin-bottom: 2px;">EgoStrap Installer (.exe)</h3>
-            <p style="font-size: 12px; color: var(--text-dim);">Official setup executable for Windows 10 & 11. Includes automatic setup guide and shortcuts.</p>
-          </div>
-          <div class="dl-btn-group">
-            <a href="https://github.com/egostrap/egostrap.github.io/releases/download/v1.2.0/EgoStrap-Setup.exe" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">
-              <i class="fa fa-download"></i> Download Installer
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Installation Guide -->
-      <div class="dl-guide">
-        <h2>Quick Installation Guide</h2>
-        <ol class="dl-steps">
-          <li>Download the <strong>EgoStrap-Setup.exe</strong> package.</li>
-          <li>Run the installer. If prompted by Windows Defender SmartScreen, select <strong>More Info</strong> and click <strong>Run Anyway</strong> (occurs because the installer is fresh and unsigned).</li>
-          <li>The EgoStrap Dashboard will open automatically. Customize your settings, toggle FPS limits, and click <strong>Launch Roblox</strong>!</li>
-        </ol>
-      </div>
-
+    <div class="section-title-wrap">
+      <div class="badge">Common Questions</div>
+      <h1 class="section-title">Frequently Asked Questions</h1>
+      <p class="section-desc">Got a question? We have answers. If you can't find what you need here, join our official Discord server.</p>
     </div>
 
-    <!-- Right panel (Sidebar info) -->
-    <div class="dl-sidebar">
+    <!-- Search Input -->
+    <div class="faq-search-wrap">
+      <i class="fa fa-search faq-search-icon"></i>
+      <input type="text" class="faq-search-input" placeholder="Search FAQ articles (e.g., ban, fps, mods)...">
+    </div>
+
+    <!-- FAQ Accordion container -->
+    <div class="faq-container">
       
-      <!-- System Specs -->
-      <div class="sidebar-box">
-        <h3>System Requirements</h3>
-        <div class="spec-list">
-          <div class="spec-item">
-            <span class="spec-label">Operating System</span>
-            <span class="spec-val">Windows 10 / 11 (64-bit)</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Roblox Engine</span>
-            <span class="spec-val">Web Client Compatible</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Dependencies</span>
-            <span class="spec-val">.NET Desktop Runtime 6.0+</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">File Size</span>
-            <span class="spec-val">~ 4.2 MB (Installer)</span>
-          </div>
+      <!-- FAQ Item 1 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Can I get banned for using EgoStrap?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            <strong>No, you cannot be banned for using EgoStrap.</strong> Roblox's anti-cheat software (Hyperion) targets software that injects code, reads/writes runtime memory (such as exploits or cheat modules), or executes arbitrary scripts inside Roblox servers. 
+          </p>
+          <br>
+          <p>
+            EgoStrap is client-side only. It works side-by-side with Roblox by modifying startup arguments, configuring FastFlags (settings native to the game engine), and overriding local files in your system directories. It does not touch active memory or behave like an exploit.
+          </p>
         </div>
       </div>
 
-      <!-- File integrity verification -->
-      <div class="sidebar-box">
-        <h3>Release Checksum</h3>
-        <p style="font-size: 11px; color: var(--text-gray); line-height: 1.5; margin-bottom: 12px;">
-          Verify file security using SHA-256 hash to guarantee it hasn't been tampered with:
-        </p>
-        <div style="font-family: monospace; font-size: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 6px; word-break: break-all; color: var(--accent-cyan);">
-          EgoStrap-Setup.exe<br>
-          <span style="color: var(--text-gray);">8f5c9e2b10a267cd40de55fa9897bb2101fa2d057a62df8bbcc1e628469e38fd</span>
+      <!-- FAQ Item 2 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Does EgoStrap cost money?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            No, EgoStrap is entirely free and open-source. We do not lock features behind paywalls, run advertising scripts, or charge subscriptions. If you would like to support development servers and domain costs, you can make a small contribution on our <a href="donate.html" style="color: var(--accent-cyan); text-decoration: none;">Donate page</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How do I unlock my FPS with EgoStrap?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Unlocking FPS is enabled by default when you install EgoStrap. You can adjust your framerate preferences inside the EgoStrap Config Dashboard by navigating to the <strong>FastFlags Studio</strong> tab, toggling the <strong>Framerate Unlocker</strong> setting, and setting your target value (e.g., 144, 240, or 9999 for unlimited).
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How do I import custom sounds and textures?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            It is simple! Open the EgoStrap Dashboard, navigate to the Customization tab, and click <strong>Open Mods Folder</strong>. Drop your audio wave files into the `sounds` directory, or override image panels in the `textures` folder. The bootstrapper handles mapping them to Roblox at startup automatically. See our <a href="docs.html#mods" style="color: var(--accent-cyan); text-decoration: none;">Mods Documentation</a> for details.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Does EgoStrap run on macOS or Mobile devices?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Currently, EgoStrap only supports Windows (Windows 10 and 11, 64-bit systems). macOS and mobile operating systems utilize different launcher file distribution standards that do not support custom bootstrapper handler redirection.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 6 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Why does my antivirus flag EgoStrap?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Because EgoStrap edits client registry parameters, creates folder hooks, and launches background threads to check for updates, some aggressive antivirus software (such as Windows Defender SmartScreen) may flag the installation. 
+          </p>
+          <br>
+          <p>
+            EgoStrap is fully open-source. You can inspect every line of code on our official GitHub repository to verify its safety. If flagged, you can safely select "Run Anyway" or add EgoStrap to your antivirus exemption list.
+          </p>
         </div>
       </div>
 
@@ -164,5 +178,49 @@
   </footer>
 
   <script src="js/main.js"></script>
+  
+  <!-- Accordion and Search script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+      const searchInput = document.querySelector('.faq-search-input');
+
+      // Set first item active by default
+      if (faqItems.length > 0) {
+        faqItems[0].classList.add('active');
+      }
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Collapse other active accordion tabs
+          faqItems.forEach(i => i.classList.remove('active'));
+          
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      // Filter FAQ items dynamically
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          
+          faqItems.forEach(item => {
+            const questionText = item.querySelector('.faq-question h3').textContent.toLowerCase();
+            const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+            
+            if (questionText.includes(query) || answerText.includes(query)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

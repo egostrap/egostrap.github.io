@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="#1683ff" d="M20 25L95 10 105 90 30 105z"/><path fill="#05070c" d="M40 38L80 30 85 70 45 78z"/><text x="42" y="60" fill="white" font-size="18" font-weight="900">EGO</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <!-- Vibrant Blue-to-Cyan Gradient -->
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#0066ff" />
+    </linearGradient>
+    
+    <!-- Mask for carving out the stylized E -->
+    <mask id="cutout">
+      <rect width="120" height="120" fill="white" />
+      <!-- The block 'E' shape -->
+      <path d="M 46 42 h 26 M 46 56 h 18 M 46 70 h 26 M 50 42 v 28" 
+            stroke="black" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter" fill="none" />
+    </mask>
+  </defs>
+  
+  <g transform="rotate(-15 60 60)">
+    <!-- Tilted Square with 'E' Cutout -->
+    <rect x="25" y="25" width="70" height="70" rx="14" fill="url(#blueGrad)" mask="url(#cutout)" />
+  </g>
+</svg>

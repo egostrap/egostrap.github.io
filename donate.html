@@ -3,13 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EgoStrap Documentation — Getting Started & Configuration Guides</title>
+  <title>Donate to EgoStrap — Support Development</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .copy-btn {
+      background: var(--accent-blue);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: var(--transition-smooth);
+      margin-top: 8px;
+    }
+    .copy-btn:hover {
+      background: #0056cc;
+    }
+  </style>
 </head>
 <body>
 
@@ -49,234 +66,63 @@
     </nav>
   </header>
 
-  <!-- Docs Layout Container -->
-  <main class="container docs-layout fade-in">
+  <!-- Donate Page Content -->
+  <main class="container fade-in" style="padding: 60px 24px; max-width: 900px;">
     
-    <!-- Sidebar Navigation -->
-    <aside class="docs-sidebar">
+    <div class="section-title-wrap">
+      <div class="badge">Support Open Source</div>
+      <h1 class="section-title">Cryptocurrency Donations</h1>
+      <p class="section-desc">EgoStrap is free and open-source. We accept contributions exclusively via Cryptocurrency (ETH, SOL, BTC) to fund development and hosting infrastructure.</p>
+    </div>
+
+    <!-- Crypto Only Donation Cards Grid -->
+    <div class="donate-grid">
       
-      <!-- Doc Search -->
-      <div class="docs-search-box">
-        <i class="fa fa-search"></i>
-        <input type="text" class="docs-search" placeholder="Search documentation...">
+      <!-- Ethereum (ETH) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(98, 126, 234, 0.1); color: #627eea; border-color: rgba(98, 126, 234, 0.3);">
+          <i class="fab fa-ethereum"></i>
+        </div>
+        <h2 class="donate-platform">Ethereum (ETH)</h2>
+        <p class="donate-desc">Ethereum mainnet and ERC-20 token contributions.</p>
+        
+        <div class="donate-crypto-addr" id="eth-address">0xf9D0eD039d17A0Ca4E48B6D6C09FBf04374448cD</div>
+        <button class="copy-btn" data-target="eth-address">Copy ETH Address</button>
       </div>
 
-      <nav class="docs-menu">
+      <!-- Solana (SOL) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(20, 241, 149, 0.1); color: #14f195; border-color: rgba(20, 241, 149, 0.3);">
+          <i class="fa fa-bolt"></i>
+        </div>
+        <h2 class="donate-platform">Solana (SOL)</h2>
+        <p class="donate-desc">High-speed Solana network SPL token contributions.</p>
         
-        <!-- Category: Getting Started -->
-        <div>
-          <h4 class="docs-cat-title">Getting Started</h4>
-          <div class="docs-links-group">
-            <a class="docs-link active" data-target="installation">Installation Guide</a>
-            <a class="docs-link" data-target="first-launch">First Launch Info</a>
-            <a class="docs-link" data-target="settings-guide">Core Settings</a>
-          </div>
+        <div class="donate-crypto-addr" id="sol-address">EKBY959bdZha67HVA9attG6cBJTnYPsrtjyRhv6xxF1D</div>
+        <button class="copy-btn" data-target="sol-address">Copy SOL Address</button>
+      </div>
+
+      <!-- Bitcoin (BTC) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(247, 147, 26, 0.1); color: #f7931a; border-color: rgba(247, 147, 26, 0.3);">
+          <i class="fab fa-bitcoin"></i>
         </div>
-
-        <!-- Category: Features -->
-        <div>
-          <h4 class="docs-cat-title">Features Guide</h4>
-          <div class="docs-links-group">
-            <a class="docs-link" data-target="themes">Custom UI Themes</a>
-            <a class="docs-link" data-target="mods">Mod Manager Studio</a>
-            <a class="docs-link" data-target="profiles">Account Profiles</a>
-          </div>
-        </div>
-
-        <!-- Category: Advanced -->
-        <div>
-          <h4 class="docs-cat-title">Advanced Tuning</h4>
-          <div class="docs-links-group">
-            <a class="docs-link" data-target="fastflags">FastFlags Studio</a>
-            <a class="docs-link" data-target="vulkan-dx">Vulkan & D3D Tuning</a>
-            <a class="docs-link" data-target="troubleshooting">Troubleshooting</a>
-          </div>
-        </div>
-
-      </nav>
-    </aside>
-
-    <!-- Docs Content Area -->
-    <section class="docs-content">
-      
-      <!-- ARTICLE: Installation -->
-      <article class="docs-section active" id="installation">
-        <h1>Installation Guide</h1>
-        <p>EgoStrap is designed to be lightweight and simple to set up. It doesn't modify the Roblox launcher files permanently; instead, it registers as a custom bootstrapper handler.</p>
+        <h2 class="donate-platform">Bitcoin (BTC)</h2>
+        <p class="donate-desc">Direct Bitcoin blockchain network transactions.</p>
         
-        <div class="docs-callout docs-callout-info">
-          <h4><i class="fa fa-info-circle"></i> Microsoft .NET Framework Requirement</h4>
-          <p>EgoStrap requires the Microsoft .NET Desktop Runtime 6.0 or higher. Most Windows 10 & 11 PCs have this pre-installed, but if yours lacks it, the installer will guide you through downloading it.</p>
-        </div>
+        <div class="donate-crypto-addr" id="btc-address">bc1qgkk23lmdhrjrx4x7mlg252zqez8zahlq8r4nfx</div>
+        <button class="copy-btn" data-target="btc-address">Copy BTC Address</button>
+      </div>
 
-        <h2>Step-by-Step Installation</h2>
-        <ol>
-          <li>Navigate to the <a href="download.html" style="color: var(--accent-cyan); text-decoration: none;">Download Page</a> and download <strong>EgoStrap-Setup.exe</strong>.</li>
-          <li>Double-click the downloaded installer.</li>
-          <li>Windows SmartScreen may trigger a warning because EgoStrap is a newer, open-source utility without an expensive digital signing certificate. Click <strong>More Info</strong>, then click <strong>Run Anyway</strong>.</li>
-          <li>Select the installation directory (we recommend keeping the default: `%localappdata%\EgoStrap`).</li>
-          <li>The program will run a brief installation procedure, configure the handler protocol, and load the dashboard interface.</li>
-        </ol>
+    </div>
 
-        <h2>Uninstalling EgoStrap</h2>
-        <p>If you wish to restore the stock Roblox bootstrapper settings:</p>
-        <ol>
-          <li>Open the EgoStrap Config Dashboard.</li>
-          <li>Go to the bottom of the General tab, and click <strong>Uninstall</strong>.</li>
-          <li>EgoStrap will cleanly unregister its custom handlers, restore standard Roblox launcher defaults, and wipe its directory. No stray registry keys or cache folders are left behind.</li>
-        </ol>
-      </article>
-
-      <!-- ARTICLE: First Launch Info -->
-      <article class="docs-section" id="first-launch">
-        <h1>First Launch Guide</h1>
-        <p>Once installation finishes, you will be greeted by the EgoStrap Config Dashboard. This is your control hub for Roblox.</p>
-        
-        <h2>How EgoStrap Handles Roblox Starts</h2>
-        <p>EgoStrap registers the custom URI handler protocol `roblox-player:`. Whenever you click **Play** on the Roblox website or open the Roblox Desktop shortcut, Windows directs the request to EgoStrap instead of the default Roblox bootstrapper.</p>
-        
-        <h2>What happens during boot?</h2>
-        <ol>
-          <li>EgoStrap launches in the background.</li>
-          <li>It scans for Roblox client updates on the official Roblox deployment servers.</li>
-          <li>It injects custom mods, configurations, fonts, and client settings locally.</li>
-          <li>It unlocks framerates by writing dynamic configurations to client settings.</li>
-          <li>It launches the official Roblox Player process.</li>
-        </ol>
-
-        <div class="docs-callout docs-callout-warning">
-          <h4><i class="fa fa-triangle-exclamation"></i> Do Not Launch as Administrator</h4>
-          <p>Running EgoStrap with administrator privileges can prevent it from communicating with browser launch protocols. Run the application normally as a standard user.</p>
-        </div>
-      </article>
-
-      <!-- ARTICLE: Core Settings -->
-      <article class="docs-section" id="settings-guide">
-        <h1>Core Settings Guide</h1>
-        <p>EgoStrap's General settings tab houses options for adjusting how the bootstrapper behaves during startup and interacts with external widgets.</p>
-        
-        <h2>Automatic Client Updates</h2>
-        <p>Roblox pushes mandatory updates multiple times a week. With Auto-Updates toggled on, EgoStrap detects outdated builds during launch, downloads only the modified asset chunks, updates them locally, and runs the game in seconds.</p>
-
-        <h2>Discord Rich Presence (DRP)</h2>
-        <p>Let your friends see what you are playing! DRP displays the name of the place, your current character thumbnail, active session duration, and server status on your Discord profile automatically.</p>
-        <p>To configure DRP, open the General tab, toggle <strong>Discord Rich Presence</strong>, and restart the client. Make sure Discord is running and game status display is enabled in Discord user settings.</p>
-      </article>
-
-      <!-- ARTICLE: Themes -->
-      <article class="docs-section" id="themes">
-        <h1>Custom UI Themes</h1>
-        <p>EgoStrap allows you to customize the bootstrapper's appearance and elements of the Roblox game interface natively.</p>
-
-        <h2>Modifying the Bootstrapper Theme</h2>
-        <p>You can select color themes directly inside the Dashboard. Custom styles adjust borders, backdrop grids, typography, and active highlights. Supported themes include Dark, Light, Cyberpunk Pink, and Minimal Blue.</p>
-
-        <h2>Sound Overrides</h2>
-        <p>Roblox replaced the classic "Oof" sound with a modern sound in 2022. EgoStrap lets you restore the classic "Oof" sound natively. In the customization tab, select <strong>Classic Oof (Pre-2022)</strong>. EgoStrap will override the sound asset locally during launch.</p>
-      </article>
-
-      <!-- ARTICLE: Mods -->
-      <article class="docs-section" id="mods">
-        <h1>Mod Manager Studio</h1>
-        <p>EgoStrap has a dedicated Mod Manager folder. Drop custom files in the folders, and EgoStrap mounts them over standard Roblox files dynamically when launching.</p>
-
-        <h2>How to Install Custom Mods</h2>
-        <ol>
-          <li>Open the EgoStrap Dashboard.</li>
-          <li>Go to the Customization/Mod tab, and click <strong>Open Mods Folder</strong>.</li>
-          <li>A folder window will open on your PC. It contains folders for:
-            <ul>
-              <li>`sounds/` — Drop custom wave/mp3 sounds.</li>
-              <li>`textures/` — Replace cursor styles, character overlays, etc.</li>
-              <li>`fonts/` — Install custom typefaces.</li>
-            </ul>
-          </li>
-          <li>Move your custom assets into the respective folder.</li>
-          <li>Launch the game. EgoStrap loads your custom modifications automatically!</li>
-        </ol>
-      </article>
-
-      <!-- ARTICLE: Profiles -->
-      <article class="docs-section" id="profiles">
-        <h1>Account Profiles Manager</h1>
-        <p>Play on multiple accounts? EgoStrap has a secure local profile manager that lets you switch accounts without entering your credentials repeatedly in a browser.</p>
-
-        <div class="docs-callout docs-callout-warning">
-          <h4><i class="fa fa-lock"></i> Security and Cookie Encryption</h4>
-          <p>EgoStrap stores login session tokens locally on your PC inside a securely encrypted database. They are only ever shared directly with Roblox's authentication endpoints, never with any third-party servers.</p>
-        </div>
-
-        <h2>Adding and Swapping Accounts</h2>
-        <ol>
-          <li>Log into your Roblox account in your browser.</li>
-          <li>Open the EgoStrap Dashboard, navigate to the <strong>Account Profiles</strong> tab.</li>
-          <li>Click <strong>Import Active Browser Session</strong>. EgoStrap will automatically identify your active session token.</li>
-          <li>Name the profile (e.g., "AltAccount01").</li>
-          <li>To swap accounts, select the profile in EgoStrap and click <strong>Activate</strong>. The next time you hit play, Roblox will load with that account!</li>
-        </ol>
-      </article>
-
-      <!-- ARTICLE: FastFlags -->
-      <article class="docs-section" id="fastflags">
-        <h1>FastFlags configurations</h1>
-        <p>FastFlags are configurations used by Roblox developers to control game engine features. EgoStrap gives you a user-friendly panel to modify these values directly.</p>
-
-        <h2>Common FastFlags Settings</h2>
-        <ul>
-          <li><strong>Unlock Framerate:</strong> Removes the 60fps limit and enables high framerates.</li>
-          <li><strong>Render Distance Scale:</strong> Extends rendering capabilities, allowing you to see objects further away.</li>
-          <li><strong>Shadow Mapping Precision:</strong> Toggles high-resolution shadows for cleaner graphics.</li>
-        </ul>
-
-        <h2>Importing Custom FastFlag Lists</h2>
-        <p>If you have a custom JSON list of FastFlags, you can import it into EgoStrap:</p>
-        <div class="docs-code">
-{
-  "DFIntTaskSchedulerTargetFps": 9999,
-  "FFlagDebugGraphicsDisableDirect3D10": "True",
-  "FFlagDisablePostFx": "True"
-}
-        </div>
-        <p>Go to the FastFlags console, click <strong>Import JSON</strong>, paste your configurations, and click <strong>Save</strong>.</p>
-      </article>
-
-      <!-- ARTICLE: Vulkan & D3D -->
-      <article class="docs-section" id="vulkan-dx">
-        <h1>Vulkan & D3D Graphics Tuning</h1>
-        <p>Roblox auto-selects your graphics engine API, which doesn't always yield the best performance on all graphics cards. EgoStrap lets you override the backend rendering engine.</p>
-
-        <h2>API Profiles</h2>
-        <ol>
-          <li><strong>Vulkan:</strong> Excellent performance on AMD graphics cards and modern PCs. Provides higher frame rates but may cause stuttering on older Nvidia GPUs.</li>
-          <li><strong>Direct3D 11:</strong> The default rendering engine. Very stable, good for standard hardware.</li>
-          <li><strong>Direct3D 12:</strong> Best for modern Windows 10/11 PCs with dedicated GPUs, supporting advanced shader pipelines.</li>
-        </ol>
-        <p>Modify these settings in the <strong>FastFlags Studio</strong> tab inside the Config Dashboard.</p>
-      </article>
-
-      <!-- ARTICLE: Troubleshooting -->
-      <article class="docs-section" id="troubleshooting">
-        <h1>Troubleshooting Guide</h1>
-        <p>Encountering issues with EgoStrap? Here are solutions to common problems.</p>
-
-        <h2>Roblox Launches with stock settings (No FPS Unlock / Mods)</h2>
-        <p>This typically occurs if the file handler association is broken. To fix this:</p>
-        <ol>
-          <li>Open the EgoStrap Dashboard.</li>
-          <li>Click the <strong>Repair Handler Links</strong> button in the bottom-left of the Dashboard.</li>
-          <li>Select <strong>Yes</strong> when prompted for handler repair.</li>
-        </ol>
-
-        <h2>Game Crashes on Launch</h2>
-        <p>If your game crashes immediately during startup, it is likely caused by an invalid or corrupted FastFlag configuration.</p>
-        <ol>
-          <li>Open the Dashboard and go to the <strong>FastFlags Studio</strong> tab.</li>
-          <li>Click <strong>Reset to Defaults</strong> to clear all custom flag overrides.</li>
-          <li>Attempt to launch the game again.</li>
-        </ol>
-      </article>
-
-    </section>
+    <!-- What donations support info -->
+    <div style="background: var(--bg-panel); border: 1px solid var(--border-subtle); padding: 32px; border-radius: 12px; margin-top: 40px; text-align: center;">
+      <h3 style="font-family: var(--font-title); font-size: 18px; margin-bottom: 12px;"><i class="fa fa-shield-halved" style="color: var(--accent-cyan);"></i> Decentralized Support</h3>
+      <p style="color: var(--text-gray); font-size: 13px; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+        Cryptocurrency donations help maintain domain registrations, patch distribution endpoints, and cloud database infrastructure. Thank you for supporting open-source software!
+      </p>
+    </div>
 
   </main>
 
@@ -300,6 +146,32 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/docs.js"></script>
+  
+  <!-- Clipboard copier for ETH, SOL, BTC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyBtns = document.querySelectorAll('.copy-btn');
+
+      copyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-target');
+          const address = document.getElementById(targetId).innerText;
+
+          navigator.clipboard.writeText(address).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = 'Address Copied!';
+            btn.style.background = '#10b981';
+            
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.style.background = 'var(--accent-blue)';
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
