@@ -1,117 +1,82 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Support EgoStrap</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found — EgoStrap</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-
 <body>
 
+  <!-- Navigation Bar -->
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.svg" alt="EgoStrap Logo" class="nav-logo">
+        <span>EgoStrap</span>
+      </a>
 
-<nav class="navbar">
+      <!-- Navigation Tabs with '|' Separators -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-separator">|</span>
+        <a href="download.html">Download</a>
+        <span class="nav-separator">|</span>
+        <a href="features.html">Features</a>
+        <span class="nav-separator">|</span>
+        <a href="docs.html">Docs</a>
+        <span class="nav-separator">|</span>
+        <a href="faq.html">FAQ</a>
+        <span class="nav-separator">|</span>
+        <a href="donate.html">Donate</a>
+      </div>
 
-<a class="brand" href="index.html">
-<img src="assets/logo.svg">
-EgoStrap
-</a>
+      <div class="nav-actions">
+        <a href="https://discord.gg/6W2M8UztJG" target="_blank" class="btn btn-discord">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+        <a href="https://github.com/egostrap/egostrap.github.io" target="_blank" class="btn btn-github">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
 
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
 
-<div class="links">
+  <!-- Error Layout -->
+  <main class="container err-layout fade-in">
+    <div class="err-code">404</div>
+    <h2 class="err-title">Lost in FastFlags Space</h2>
+    <p class="err-desc">
+      The client configuration parameter or page you were trying to access does not exist or has been relocated to another directory index.
+    </p>
+    <a href="index.html" class="btn btn-primary">
+      <i class="fa fa-home"></i> Return to Safety
+    </a>
+  </main>
 
-<a href="index.html">Home</a>
-<a href="download.html">Download</a>
-<a href="features.html">Features</a>
-<a href="docs.html">Docs</a>
-<a href="faq.html">FAQ</a>
-<a href="donate.html">Donate</a>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="assets/logo.svg" alt="EgoStrap Logo" style="width: 24px; height: 24px;">
+        EgoStrap
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 EgoStrap. Not affiliated with Roblox Corporation.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </div>
+  </footer>
 
-</div>
-
-</nav>
-
-
-
-<section class="hero container">
-
-
-<h1>
-Support <span>EgoStrap</span>
-</h1>
-
-
-<p>
-Help keep development alive and support future updates.
-</p>
-
-
-<a class="button">
-Donate
-</a>
-
-
-</section>
-
-
-
-<section class="container">
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>
-☕ Ko-fi
-</h3>
-
-<p>
-Support development with a small donation.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-💙 Sponsors
-</h3>
-
-<p>
-Become a project supporter.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-⭐ Contributors
-</h3>
-
-<p>
-Help improve EgoStrap.
-</p>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-<footer>
-© 2026 EgoStrap Team
-</footer>
-
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

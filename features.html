@@ -1,139 +1,165 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>EgoStrap Features</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download EgoStrap — Get the Roblox Bootstrapper</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-
 <body>
 
+  <!-- Navigation Bar -->
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.svg" alt="EgoStrap Logo" class="nav-logo">
+        <span>EgoStrap</span>
+      </a>
 
-<nav class="navbar">
+      <!-- Navigation Tabs with '|' Separators -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-separator">|</span>
+        <a href="download.html">Download</a>
+        <span class="nav-separator">|</span>
+        <a href="features.html">Features</a>
+        <span class="nav-separator">|</span>
+        <a href="docs.html">Docs</a>
+        <span class="nav-separator">|</span>
+        <a href="faq.html">FAQ</a>
+        <span class="nav-separator">|</span>
+        <a href="donate.html">Donate</a>
+      </div>
 
-<a class="brand" href="index.html">
-<img src="assets/logo.svg">
-EgoStrap
-</a>
+      <div class="nav-actions">
+        <a href="https://discord.gg/6W2M8UztJG" target="_blank" class="btn btn-discord">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+        <a href="https://github.com/egostrap/egostrap.github.io" target="_blank" class="btn btn-github">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
 
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
 
-<div class="links">
+  <!-- Download Section Content -->
+  <main class="container dl-layout fade-in">
+    
+    <!-- Left panel (Downloader and Guides) -->
+    <div class="dl-card">
+      <div class="dl-header-wrap">
+        <div class="feature-icon" style="width: 60px; height: 60px; font-size: 30px;">
+          <i class="fa fa-download"></i>
+        </div>
+        <div class="dl-title-group">
+          <h1>Download EgoStrap</h1>
+          <div class="dl-meta">
+            <span>Current Version: <strong>v1.2.0 (Latest)</strong></span>
+            <span>•</span>
+            <span>Released: <strong>July 2026</strong></span>
+          </div>
+        </div>
+      </div>
 
-<a href="index.html">Home</a>
-<a href="download.html">Download</a>
-<a href="features.html">Features</a>
-<a href="docs.html">Docs</a>
-<a href="faq.html">FAQ</a>
-<a href="donate.html">Donate</a>
+      <p style="color: var(--text-gray); margin-bottom: 30px;">
+        Get the most advanced Roblox bootstrapper package. Safe, lightweight, open-source. Select your preferred distribution type below.
+      </p>
 
-</div>
+      <!-- Action items -->
+      <div class="dl-actions-grid">
+        
+        <!-- Stable EXE -->
+        <div class="dl-row">
+          <div>
+            <h3 style="font-size: 16px; margin-bottom: 2px;">EgoStrap Installer (.exe)</h3>
+            <p style="font-size: 12px; color: var(--text-dim);">Official setup executable for Windows 10 & 11. Includes automatic setup guide and shortcuts.</p>
+          </div>
+          <div class="dl-btn-group">
+            <a href="https://github.com/egostrap/egostrap.github.io/releases/download/v1.2.0/EgoStrap-Setup.exe" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">
+              <i class="fa fa-download"></i> Download Installer
+            </a>
+          </div>
+        </div>
 
-</nav>
+      </div>
 
+      <!-- Installation Guide -->
+      <div class="dl-guide">
+        <h2>Quick Installation Guide</h2>
+        <ol class="dl-steps">
+          <li>Download the <strong>EgoStrap-Setup.exe</strong> package.</li>
+          <li>Run the installer. If prompted by Windows Defender SmartScreen, select <strong>More Info</strong> and click <strong>Run Anyway</strong> (occurs because the installer is fresh and unsigned).</li>
+          <li>The EgoStrap Dashboard will open automatically. Customize your settings, toggle FPS limits, and click <strong>Launch Roblox</strong>!</li>
+        </ol>
+      </div>
 
+    </div>
 
-<section class="container hero">
+    <!-- Right panel (Sidebar info) -->
+    <div class="dl-sidebar">
+      
+      <!-- System Specs -->
+      <div class="sidebar-box">
+        <h3>System Requirements</h3>
+        <div class="spec-list">
+          <div class="spec-item">
+            <span class="spec-label">Operating System</span>
+            <span class="spec-val">Windows 10 / 11 (64-bit)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Roblox Engine</span>
+            <span class="spec-val">Web Client Compatible</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Dependencies</span>
+            <span class="spec-val">.NET Desktop Runtime 6.0+</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">File Size</span>
+            <span class="spec-val">~ 4.2 MB (Installer)</span>
+          </div>
+        </div>
+      </div>
 
+      <!-- File integrity verification -->
+      <div class="sidebar-box">
+        <h3>Release Checksum</h3>
+        <p style="font-size: 11px; color: var(--text-gray); line-height: 1.5; margin-bottom: 12px;">
+          Verify file security using SHA-256 hash to guarantee it hasn't been tampered with:
+        </p>
+        <div style="font-family: monospace; font-size: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 6px; word-break: break-all; color: var(--accent-cyan);">
+          EgoStrap-Setup.exe<br>
+          <span style="color: var(--text-gray);">8f5c9e2b10a267cd40de55fa9897bb2101fa2d057a62df8bbcc1e628469e38fd</span>
+        </div>
+      </div>
 
-<h1>
-Powerful <span>Features</span>
-</h1>
+    </div>
 
+  </main>
 
-<p>
-Everything built into EgoStrap.
-</p>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="assets/logo.svg" alt="EgoStrap Logo" style="width: 24px; height: 24px;">
+        EgoStrap
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 EgoStrap. Not affiliated with Roblox Corporation.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </div>
+  </footer>
 
-
-</section>
-
-
-
-
-<section class="container">
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>⚡ Fast Bootstrap</h3>
-
-<p>
-Launch Roblox quickly with a lightweight system.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🎨 Custom Themes</h3>
-
-<p>
-Change colors, backgrounds, icons, and animations.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🧩 Mod Manager</h3>
-
-<p>
-Install and manage your customization packs.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>👥 Account Manager</h3>
-
-<p>
-Manage multiple Roblox profiles.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🌎 Region Selector</h3>
-
-<p>
-Choose connection preferences.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>⚙ Advanced Settings</h3>
-
-<p>
-Fine tune your launcher experience.
-</p>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-<footer>
-© 2026 EgoStrap Team
-</footer>
-
-
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,123 +1,174 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>EgoStrap FAQ</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate to EgoStrap — Support Development</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .copy-btn {
+      background: var(--accent-blue);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: var(--transition-smooth);
+      margin-top: 8px;
+    }
+    .copy-btn:hover {
+      background: #0056cc;
+    }
+  </style>
 </head>
-
-
 <body>
 
+  <!-- Navigation Bar -->
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.svg" alt="EgoStrap Logo" class="nav-logo">
+        <span>EgoStrap</span>
+      </a>
 
-<nav class="navbar">
+      <!-- Navigation Tabs with '|' Separators -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-separator">|</span>
+        <a href="download.html">Download</a>
+        <span class="nav-separator">|</span>
+        <a href="features.html">Features</a>
+        <span class="nav-separator">|</span>
+        <a href="docs.html">Docs</a>
+        <span class="nav-separator">|</span>
+        <a href="faq.html">FAQ</a>
+        <span class="nav-separator">|</span>
+        <a href="donate.html">Donate</a>
+      </div>
 
-<a class="brand" href="index.html">
-<img src="assets/logo.svg">
-EgoStrap
-</a>
+      <div class="nav-actions">
+        <a href="https://discord.gg/6W2M8UztJG" target="_blank" class="btn btn-discord">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+        <a href="https://github.com/egostrap/egostrap.github.io" target="_blank" class="btn btn-github">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
 
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
 
-<div class="links">
+  <!-- Donate Page Content -->
+  <main class="container fade-in" style="padding: 60px 24px; max-width: 900px;">
+    
+    <div class="section-title-wrap">
+      <div class="badge">Support Open Source</div>
+      <h1 class="section-title">Cryptocurrency Donations</h1>
+      <p class="section-desc">EgoStrap is free and open-source. We accept contributions exclusively via Cryptocurrency (ETH, SOL, BTC) to fund development and hosting infrastructure.</p>
+    </div>
 
-<a href="index.html">Home</a>
-<a href="download.html">Download</a>
-<a href="features.html">Features</a>
-<a href="docs.html">Docs</a>
-<a href="faq.html">FAQ</a>
-<a href="donate.html">Donate</a>
+    <!-- Crypto Only Donation Cards Grid -->
+    <div class="donate-grid">
+      
+      <!-- Ethereum (ETH) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(98, 126, 234, 0.1); color: #627eea; border-color: rgba(98, 126, 234, 0.3);">
+          <i class="fab fa-ethereum"></i>
+        </div>
+        <h2 class="donate-platform">Ethereum (ETH)</h2>
+        <p class="donate-desc">Ethereum mainnet and ERC-20 token contributions.</p>
+        
+        <div class="donate-crypto-addr" id="eth-address">0xf9D0eD039d17A0Ca4E48B6D6C09FBf04374448cD</div>
+        <button class="copy-btn" data-target="eth-address">Copy ETH Address</button>
+      </div>
 
-</div>
+      <!-- Solana (SOL) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(20, 241, 149, 0.1); color: #14f195; border-color: rgba(20, 241, 149, 0.3);">
+          <i class="fa fa-bolt"></i>
+        </div>
+        <h2 class="donate-platform">Solana (SOL)</h2>
+        <p class="donate-desc">High-speed Solana network SPL token contributions.</p>
+        
+        <div class="donate-crypto-addr" id="sol-address">EKBY959bdZha67HVA9attG6cBJTnYPsrtjyRhv6xxF1D</div>
+        <button class="copy-btn" data-target="sol-address">Copy SOL Address</button>
+      </div>
 
-</nav>
+      <!-- Bitcoin (BTC) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(247, 147, 26, 0.1); color: #f7931a; border-color: rgba(247, 147, 26, 0.3);">
+          <i class="fab fa-bitcoin"></i>
+        </div>
+        <h2 class="donate-platform">Bitcoin (BTC)</h2>
+        <p class="donate-desc">Direct Bitcoin blockchain network transactions.</p>
+        
+        <div class="donate-crypto-addr" id="btc-address">bc1qgkk23lmdhrjrx4x7mlg252zqez8zahlq8r4nfx</div>
+        <button class="copy-btn" data-target="btc-address">Copy BTC Address</button>
+      </div>
 
+    </div>
 
+    <!-- What donations support info -->
+    <div style="background: var(--bg-panel); border: 1px solid var(--border-subtle); padding: 32px; border-radius: 12px; margin-top: 40px; text-align: center;">
+      <h3 style="font-family: var(--font-title); font-size: 18px; margin-bottom: 12px;"><i class="fa fa-shield-halved" style="color: var(--accent-cyan);"></i> Decentralized Support</h3>
+      <p style="color: var(--text-gray); font-size: 13px; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+        Cryptocurrency donations help maintain domain registrations, patch distribution endpoints, and cloud database infrastructure. Thank you for supporting open-source software!
+      </p>
+    </div>
 
+  </main>
 
-<section class="container hero">
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="assets/logo.svg" alt="EgoStrap Logo" style="width: 24px; height: 24px;">
+        EgoStrap
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 EgoStrap. Not affiliated with Roblox Corporation.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </div>
+  </footer>
 
-<h1>
-Frequently Asked <span>Questions</span>
-</h1>
+  <script src="js/main.js"></script>
+  
+  <!-- Clipboard copier for ETH, SOL, BTC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyBtns = document.querySelectorAll('.copy-btn');
 
-</section>
+      copyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-target');
+          const address = document.getElementById(targetId).innerText;
 
-
-
-<section class="container">
-
-
-<div class="card">
-
-<h3>
-What is EgoStrap?
-</h3>
-
-<p>
-EgoStrap is a Roblox bootstrapper focused on customization,
-performance, and user control.
-</p>
-
-</div>
-
-
-<br>
-
-
-<div class="card">
-
-<h3>
-Is EgoStrap free?
-</h3>
-
-<p>
-Yes. EgoStrap is free and open source.
-</p>
-
-</div>
-
-
-<br>
-
-
-<div class="card">
-
-<h3>
-Can I make themes?
-</h3>
-
-<p>
-Yes. EgoStrap supports custom themes and modifications.
-</p>
-
-</div>
-
-
-<br>
-
-
-<div class="card">
-
-<h3>
-Where is the source code?
-</h3>
-
-<p>
-Available on GitHub.
-</p>
-
-</div>
-
-
-
-</section>
-
-
-
-<footer>
-© 2026 EgoStrap Team
-</footer>
-
-
+          navigator.clipboard.writeText(address).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = 'Address Copied!';
+            btn.style.background = '#10b981';
+            
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.style.background = 'var(--accent-blue)';
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
