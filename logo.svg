@@ -1,103 +1,331 @@
-/**
- * EgoStrap Docs Navigation & Search Script
- * Handles category navigation, content loading and article search filters.
- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EgoStrap — The Ultimate Roblox Customization Engine</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styling Sheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- FontAwesome Icons for visual flair -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-document.addEventListener('DOMContentLoaded', () => {
-  setupDocsNavigation();
-  setupDocsSearch();
-});
+  <!-- Navigation Bar -->
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.svg" alt="EgoStrap Logo" class="nav-logo">
+        <span>EgoStrap</span>
+      </a>
 
-/**
- * Handles tab-like routing inside the documentation page
- */
-function setupDocsNavigation() {
-  const sidebarLinks = document.querySelectorAll('.docs-link');
-  const sections = document.querySelectorAll('.docs-section');
+      <!-- Navigation Tabs with '|' Separators -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-separator">|</span>
+        <a href="download.html">Download</a>
+        <span class="nav-separator">|</span>
+        <a href="features.html">Features</a>
+        <span class="nav-separator">|</span>
+        <a href="docs.html">Docs</a>
+        <span class="nav-separator">|</span>
+        <a href="faq.html">FAQ</a>
+        <span class="nav-separator">|</span>
+        <a href="donate.html">Donate</a>
+      </div>
 
-  // Check URL hash for direct links (e.g. docs.html#installation)
-  const currentHash = window.location.hash;
-  if (currentHash) {
-    const targetId = currentHash.replace('#', '');
-    const activeSection = document.getElementById(targetId);
-    const activeLink = document.querySelector(`.docs-link[data-target="${targetId}"]`);
+      <div class="nav-actions">
+        <a href="https://discord.gg/6W2M8UztJG" target="_blank" class="btn btn-discord">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+        <a href="https://github.com/egostrap/egostrap.github.io" target="_blank" class="btn btn-github">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Landing Section -->
+  <section class="container hero fade-in">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Safe & Client-Side Customization
+    </div>
     
-    if (activeSection && activeLink) {
-      sections.forEach(s => s.classList.remove('active'));
-      activeSection.classList.add('active');
-      
-      sidebarLinks.forEach(l => l.classList.remove('active'));
-      activeLink.classList.add('active');
-    }
-  }
+    <h1 class="hero-title">
+      Your Roblox Client.<br>
+      <span>Fully Reimagined.</span>
+    </h1>
+    
+    <p class="hero-subtitle">
+      EgoStrap is an open-source Roblox bootstrapper focused on performance optimization, UI customization, account switching, and advanced control. Zero exploit injection, zero ban risk.
+    </p>
+    
+    <div class="hero-ctas">
+      <a href="download.html" class="btn btn-primary">
+        <i class="fa fa-download"></i> Get EgoStrap
+      </a>
+      <a href="features.html" class="btn btn-secondary">
+        Explore Features
+      </a>
+    </div>
 
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('data-target');
-      const targetSection = document.getElementById(targetId);
+    <!-- Interactive Launcher UI Mockup -->
+    <div class="mockup-container">
+      <div class="launcher-mockup">
+        
+        <!-- Header -->
+        <div class="launcher-header">
+          <div class="mockup-title">
+            <img src="assets/logo.svg" alt="Icon" style="width:16px;height:16px;">
+            EgoStrap Config Dashboard
+          </div>
+          <div class="mockup-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+        </div>
+        
+        <!-- Dashboard Body Grid -->
+        <div class="launcher-body">
+          
+          <!-- Sidebar Navigation -->
+          <div class="launcher-sidebar">
+            <div class="sidebar-item active" data-view="general">
+              <i class="fa fa-sliders"></i> General Settings
+            </div>
+            <div class="sidebar-item" data-view="customization">
+              <i class="fa fa-paint-brush"></i> Customization
+            </div>
+            <div class="sidebar-item" data-view="fastflags">
+              <i class="fa fa-code"></i> FastFlags Studio
+            </div>
+            <div class="sidebar-item" data-view="accounts">
+              <i class="fa fa-users"></i> Account Profiles
+            </div>
+          </div>
+          
+          <!-- View Context Views -->
+          <div class="launcher-content">
+            
+            <!-- General Settings View -->
+            <div class="launcher-view active" id="view-general">
+              <h3 class="view-title">General Settings</h3>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Automatic Client Updates</h4>
+                  <p>Keep EgoStrap updated to the latest build automatically.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Discord Rich Presence</h4>
+                  <p>Display your active game state on Discord profile activity.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Clear Roblox Cache</h4>
+                  <p>Wipe temporary asset caches to free disk space.</p>
+                </div>
+                <button class="btn-launch" style="padding:4px 12px; font-size:11px; background:#1e293b;">Clear</button>
+              </div>
+            </div>
 
-      if (targetSection) {
-        // Update URL hash without reload
-        window.location.hash = targetId;
+            <!-- Customization Settings View -->
+            <div class="launcher-view" id="view-customization">
+              <h3 class="view-title">Customization Pack</h3>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Choose Game Sound Pack</h4>
+                  <p>Restore the classic "Oof" sound effects.</p>
+                </div>
+                <select class="mockup-select">
+                  <option>Classic Oof (Pre-2022)</option>
+                  <option>Modern Chronos Sound</option>
+                  <option>Disabled</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Legacy Avatar Editor UI</h4>
+                  <p>Forces the client to load the nostalgic avatar customization screens.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Custom Client Fonts</h4>
+                  <p>Replace default Roblox client typeface system-wide.</p>
+                </div>
+                <select class="mockup-select">
+                  <option>Inter Display</option>
+                  <option>Segoe UI Semibold</option>
+                  <option>Comic Sans MS</option>
+                </select>
+              </div>
+            </div>
 
-        // Toggle Sidebar classes
-        sidebarLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
+            <!-- FastFlags View -->
+            <div class="launcher-view" id="view-fastflags">
+              <h3 class="view-title">FastFlags Settings</h3>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Framerate Unlocker</h4>
+                  <p>Remove the 60fps limit to target maximum screen hz.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Graphics Rendering Engine</h4>
+                  <p>Force Roblox to render using a specific Direct3D backend.</p>
+                </div>
+                <select class="mockup-select">
+                  <option>Vulkan (Optimized)</option>
+                  <option>Direct3D 11</option>
+                  <option>Direct3D 10</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Anti-Aliasing Algorithm</h4>
+                  <p>Force subpixel smoothing configurations.</p>
+                </div>
+                <select class="mockup-select">
+                  <option>MSAA 4x (Crisp)</option>
+                  <option>FXAA (Fast)</option>
+                  <option>No Overrides</option>
+                </select>
+              </div>
+            </div>
 
-        // Switch active section content
-        sections.forEach(s => s.classList.remove('active'));
-        targetSection.classList.add('active');
+            <!-- Account View -->
+            <div class="launcher-view" id="view-accounts">
+              <h3 class="view-title">Profile Account Manager</h3>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Main_Player</h4>
+                  <p>Active profile • Logged in via security cookie.</p>
+                </div>
+                <span class="badge" style="margin:0; padding:2px 10px; font-size:10px;">Primary</span>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Trading_Alt01</h4>
+                  <p>Offline • Ready to swap.</p>
+                </div>
+                <button class="btn-launch" style="padding:4px 12px; font-size:11px; background:#0066ff;">Swap</button>
+              </div>
+              <button class="btn btn-secondary" style="margin-top: 10px; padding: 6px 14px; font-size: 12px;">
+                <i class="fa fa-plus"></i> Add Account Profile
+              </button>
+            </div>
+            
+            <!-- Dashboard Mockup Action Footer -->
+            <div class="launcher-footer">
+              <div class="launch-status">
+                <span class="badge-dot"></span> Ready to patch Roblox client
+              </div>
+              <button class="btn-launch">Launch Client</button>
+            </div>
 
-        // Scroll to top of docs content on mobile
-        if (window.innerWidth <= 768) {
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }
-    });
-  });
-}
+          </div>
+        </div>
 
-/**
- * Filters sidebar navigation links based on doc search string
- */
-function setupDocsSearch() {
-  const searchInput = document.querySelector('.docs-search');
-  const sidebarLinks = document.querySelectorAll('.docs-link');
-  const groups = document.querySelectorAll('.docs-menu > div'); // Nav category wrappers
+      </div>
+    </div>
+  </section>
 
-  if (!searchInput) return;
+  <!-- Core Features Container -->
+  <section class="container" style="padding-top: 40px;">
+    <div class="section-title-wrap">
+      <h2 class="section-title">Designed for Control</h2>
+      <p class="section-desc">EgoStrap sits adjacent to Roblox to tweak client settings, load sound assets, and manage launcher profiles natively.</p>
+    </div>
 
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
+    <div class="features-grid">
+      <!-- Feature Card 1 -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-bolt"></i></div>
+        <h3>Unlocked Framerates</h3>
+        <p>Break through the standard client locks. Target 144Hz, 240Hz, or higher and override resolution properties to make gameplay buttery smooth.</p>
+      </div>
 
-    sidebarLinks.forEach(link => {
-      const text = link.textContent.toLowerCase();
-      const targetId = link.getAttribute('data-target');
-      const section = document.getElementById(targetId);
-      
-      // Look inside both the link label and the actual section text content
-      const contentText = section ? section.textContent.toLowerCase() : '';
-      
-      if (text.includes(query) || contentText.includes(query)) {
-        link.style.display = 'block';
-      } else {
-        link.style.display = 'none';
-      }
-    });
+      <!-- Feature Card 2 -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-shield-halved"></i></div>
+        <h3>Anticheat Protected</h3>
+        <p>EgoStrap utilizes native bootloader configurations and local assets. It does not inject code, hooks, or libraries, keeping it completely exploit-free and safe from bans.</p>
+      </div>
 
-    // Hide entire categories if all of their children links are hidden
-    groups.forEach(group => {
-      const visibleLinks = group.querySelectorAll('.docs-link[style="display: block;"], .docs-link:not([style*="display: none"])');
-      const categoryTitle = group.querySelector('.docs-cat-title');
-      
-      if (visibleLinks.length === 0) {
-        group.style.display = 'none';
-      } else {
-        group.style.display = 'block';
-      }
-    });
-  });
-}
+      <!-- Feature Card 3 -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-folder-open"></i></div>
+        <h3>Mod Manager Studio</h3>
+        <p>Easily load custom audio assets, death sounds, visual textures, and GUI overrides directly into memory without modifying the client files.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats & Discord Integration widget banner -->
+  <section class="container">
+    <div class="stats-banner">
+      <div class="stats-left">
+        <h2>Join the Community</h2>
+        <p>Get instant updates on updates, share custom configuration flags, trade client modifications, and get setup help directly from other players.</p>
+        
+        <!-- Official Live Discord Widget Embed -->
+        <div class="discord-widget-wrapper" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: #090e1a; margin-top: 20px;">
+          <iframe src="https://discord.com/widget?id=1529151589561143417&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="assets/logo.svg" alt="EgoStrap Logo" style="width: 24px; height: 24px;">
+        EgoStrap
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 EgoStrap. Not affiliated with Roblox Corporation.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

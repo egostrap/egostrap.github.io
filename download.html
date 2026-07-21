@@ -3,13 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download EgoStrap — Get the Roblox Bootstrapper</title>
+  <title>Donate to EgoStrap — Support Development</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .copy-btn {
+      background: var(--accent-blue);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: var(--transition-smooth);
+      margin-top: 8px;
+    }
+    .copy-btn:hover {
+      background: #0056cc;
+    }
+  </style>
 </head>
 <body>
 
@@ -49,97 +66,62 @@
     </nav>
   </header>
 
-  <!-- Download Section Content -->
-  <main class="container dl-layout fade-in">
+  <!-- Donate Page Content -->
+  <main class="container fade-in" style="padding: 60px 24px; max-width: 900px;">
     
-    <!-- Left panel (Downloader and Guides) -->
-    <div class="dl-card">
-      <div class="dl-header-wrap">
-        <div class="feature-icon" style="width: 60px; height: 60px; font-size: 30px;">
-          <i class="fa fa-download"></i>
-        </div>
-        <div class="dl-title-group">
-          <h1>Download EgoStrap</h1>
-          <div class="dl-meta">
-            <span>Current Version: <strong>v1.2.0 (Latest)</strong></span>
-            <span>•</span>
-            <span>Released: <strong>July 2026</strong></span>
-          </div>
-        </div>
-      </div>
+    <div class="section-title-wrap">
+      <div class="badge">Support Open Source</div>
+      <h1 class="section-title">Cryptocurrency Donations</h1>
+      <p class="section-desc">EgoStrap is free and open-source. We accept contributions exclusively via Cryptocurrency (ETH, SOL, BTC) to fund development and hosting infrastructure.</p>
+    </div>
 
-      <p style="color: var(--text-gray); margin-bottom: 30px;">
-        Get the most advanced Roblox bootstrapper package. Safe, lightweight, open-source. Select your preferred distribution type below.
-      </p>
-
-      <!-- Action items -->
-      <div class="dl-actions-grid">
+    <!-- Crypto Only Donation Cards Grid -->
+    <div class="donate-grid">
+      
+      <!-- Ethereum (ETH) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(98, 126, 234, 0.1); color: #627eea; border-color: rgba(98, 126, 234, 0.3);">
+          <i class="fab fa-ethereum"></i>
+        </div>
+        <h2 class="donate-platform">Ethereum (ETH)</h2>
+        <p class="donate-desc">Ethereum mainnet and ERC-20 token contributions.</p>
         
-        <!-- Stable EXE -->
-        <div class="dl-row">
-          <div>
-            <h3 style="font-size: 16px; margin-bottom: 2px;">EgoStrap Installer (.exe)</h3>
-            <p style="font-size: 12px; color: var(--text-dim);">Official setup executable for Windows 10 & 11. Includes automatic setup guide and shortcuts.</p>
-          </div>
-          <div class="dl-btn-group">
-            <a href="https://github.com/egostrap/egostrap.github.io/releases/download/v1.2.0/EgoStrap-Setup.exe" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">
-              <i class="fa fa-download"></i> Download Installer
-            </a>
-          </div>
-        </div>
-
+        <div class="donate-crypto-addr" id="eth-address">0xf9D0eD039d17A0Ca4E48B6D6C09FBf04374448cD</div>
+        <button class="copy-btn" data-target="eth-address">Copy ETH Address</button>
       </div>
 
-      <!-- Installation Guide -->
-      <div class="dl-guide">
-        <h2>Quick Installation Guide</h2>
-        <ol class="dl-steps">
-          <li>Download the <strong>EgoStrap-Setup.exe</strong> package.</li>
-          <li>Run the installer. If prompted by Windows Defender SmartScreen, select <strong>More Info</strong> and click <strong>Run Anyway</strong> (occurs because the installer is fresh and unsigned).</li>
-          <li>The EgoStrap Dashboard will open automatically. Customize your settings, toggle FPS limits, and click <strong>Launch Roblox</strong>!</li>
-        </ol>
+      <!-- Solana (SOL) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(20, 241, 149, 0.1); color: #14f195; border-color: rgba(20, 241, 149, 0.3);">
+          <i class="fa fa-bolt"></i>
+        </div>
+        <h2 class="donate-platform">Solana (SOL)</h2>
+        <p class="donate-desc">High-speed Solana network SPL token contributions.</p>
+        
+        <div class="donate-crypto-addr" id="sol-address">EKBY959bdZha67HVA9attG6cBJTnYPsrtjyRhv6xxF1D</div>
+        <button class="copy-btn" data-target="sol-address">Copy SOL Address</button>
+      </div>
+
+      <!-- Bitcoin (BTC) -->
+      <div class="donate-card">
+        <div class="feature-icon" style="background: rgba(247, 147, 26, 0.1); color: #f7931a; border-color: rgba(247, 147, 26, 0.3);">
+          <i class="fab fa-bitcoin"></i>
+        </div>
+        <h2 class="donate-platform">Bitcoin (BTC)</h2>
+        <p class="donate-desc">Direct Bitcoin blockchain network transactions.</p>
+        
+        <div class="donate-crypto-addr" id="btc-address">bc1qgkk23lmdhrjrx4x7mlg252zqez8zahlq8r4nfx</div>
+        <button class="copy-btn" data-target="btc-address">Copy BTC Address</button>
       </div>
 
     </div>
 
-    <!-- Right panel (Sidebar info) -->
-    <div class="dl-sidebar">
-      
-      <!-- System Specs -->
-      <div class="sidebar-box">
-        <h3>System Requirements</h3>
-        <div class="spec-list">
-          <div class="spec-item">
-            <span class="spec-label">Operating System</span>
-            <span class="spec-val">Windows 10 / 11 (64-bit)</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Roblox Engine</span>
-            <span class="spec-val">Web Client Compatible</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Dependencies</span>
-            <span class="spec-val">.NET Desktop Runtime 6.0+</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">File Size</span>
-            <span class="spec-val">~ 4.2 MB (Installer)</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- File integrity verification -->
-      <div class="sidebar-box">
-        <h3>Release Checksum</h3>
-        <p style="font-size: 11px; color: var(--text-gray); line-height: 1.5; margin-bottom: 12px;">
-          Verify file security using SHA-256 hash to guarantee it hasn't been tampered with:
-        </p>
-        <div style="font-family: monospace; font-size: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 6px; word-break: break-all; color: var(--accent-cyan);">
-          EgoStrap-Setup.exe<br>
-          <span style="color: var(--text-gray);">8f5c9e2b10a267cd40de55fa9897bb2101fa2d057a62df8bbcc1e628469e38fd</span>
-        </div>
-      </div>
-
+    <!-- What donations support info -->
+    <div style="background: var(--bg-panel); border: 1px solid var(--border-subtle); padding: 32px; border-radius: 12px; margin-top: 40px; text-align: center;">
+      <h3 style="font-family: var(--font-title); font-size: 18px; margin-bottom: 12px;"><i class="fa fa-shield-halved" style="color: var(--accent-cyan);"></i> Decentralized Support</h3>
+      <p style="color: var(--text-gray); font-size: 13px; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+        Cryptocurrency donations help maintain domain registrations, patch distribution endpoints, and cloud database infrastructure. Thank you for supporting open-source software!
+      </p>
     </div>
 
   </main>
@@ -164,5 +146,32 @@
   </footer>
 
   <script src="js/main.js"></script>
+  
+  <!-- Clipboard copier for ETH, SOL, BTC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyBtns = document.querySelectorAll('.copy-btn');
+
+      copyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-target');
+          const address = document.getElementById(targetId).innerText;
+
+          navigator.clipboard.writeText(address).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = 'Address Copied!';
+            btn.style.background = '#10b981';
+            
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.style.background = 'var(--accent-blue)';
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>

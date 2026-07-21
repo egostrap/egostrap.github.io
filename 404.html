@@ -1,85 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Not Found — EgoStrap</title>
+/**
+ * EgoStrap Global Interactive Script
+ * Provides premium UI features, mockup controls, card mouse-glow tracking,
+ * and live statistic simulations.
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupMobileMenu();
+  setupNavbarActiveState();
+  setupLauncherMockup();
+  setupMouseGlowCards();
+  simulateStats();
+});
+
+/**
+ * Mobile Navigation Drawer Toggle
+ */
+function setupMobileMenu() {
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+      const isExpanded = navLinks.classList.contains('active');
+      toggleBtn.innerHTML = isExpanded ? '✕' : '☰';
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        toggleBtn.innerHTML = '☰';
+      }
+    });
+  }
+}
+
+/**
+ * Highlights active page in the header links
+ */
+function setupNavbarActiveState() {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-links a');
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && currentPath.includes(href) && href !== 'index.html') {
+      link.classList.add('active');
+    } else if (href === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('index.html'))) {
+      link.classList.add('active');
+    }
+  });
+}
 
-  <!-- Navigation Bar -->
-  <header class="container">
-    <nav class="navbar">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/logo.svg" alt="EgoStrap Logo" class="nav-logo">
-        <span>EgoStrap</span>
-      </a>
+/**
+ * Launcher Dashboard Mockup Interactivity
+ */
+function setupLauncherMockup() {
+  const sidebarItems = document.querySelectorAll('.launcher-sidebar .sidebar-item');
+  const views = document.querySelectorAll('.launcher-content .launcher-view');
+  const launchBtn = document.querySelector('.btn-launch');
+  const launchStatus = document.querySelector('.launch-status');
 
-      <!-- Navigation Tabs with '|' Separators -->
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <span class="nav-separator">|</span>
-        <a href="download.html">Download</a>
-        <span class="nav-separator">|</span>
-        <a href="features.html">Features</a>
-        <span class="nav-separator">|</span>
-        <a href="docs.html">Docs</a>
-        <span class="nav-separator">|</span>
-        <a href="faq.html">FAQ</a>
-        <span class="nav-separator">|</span>
-        <a href="donate.html">Donate</a>
-      </div>
+  sidebarItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const targetViewId = item.getAttribute('data-view');
+      const targetView = document.getElementById(`view-${targetViewId}`);
 
-      <div class="nav-actions">
-        <a href="https://discord.gg/6W2M8UztJG" target="_blank" class="btn btn-discord">
-          <i class="fab fa-discord"></i> Discord
-        </a>
-        <a href="https://github.com/egostrap/egostrap.github.io" target="_blank" class="btn btn-github">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-      </div>
+      if (targetView) {
+        // Toggle Active Sidebar Link
+        sidebarItems.forEach(si => si.classList.remove('active'));
+        item.classList.add('active');
 
-      <button class="menu-toggle">☰</button>
-    </nav>
-  </header>
+        // Toggle Active Content View
+        views.forEach(v => v.classList.remove('active'));
+        targetView.classList.add('active');
+      }
+    });
+  });
 
-  <!-- Error Layout -->
-  <main class="container err-layout fade-in">
-    <div class="err-code">404</div>
-    <h2 class="err-title">Lost in FastFlags Space</h2>
-    <p class="err-desc">
-      The client configuration parameter or page you were trying to access does not exist or has been relocated to another directory index.
-    </p>
-    <a href="index.html" class="btn btn-primary">
-      <i class="fa fa-home"></i> Return to Safety
-    </a>
-  </main>
+  // Action simulation for "Launch Roblox" button
+  if (launchBtn && launchStatus) {
+    let launching = false;
+    launchBtn.addEventListener('click', () => {
+      if (launching) return;
+      launching = true;
+      
+      launchBtn.style.opacity = '0.7';
+      launchBtn.innerText = 'Booting...';
+      
+      const originalStatusText = launchStatus.innerHTML;
+      launchStatus.innerHTML = '<span class="badge-dot" style="background:#ffb700;"></span> Running Client-side patches...';
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-logo">
-        <img src="assets/logo.svg" alt="EgoStrap Logo" style="width: 24px; height: 24px;">
-        EgoStrap
-      </div>
-      <div class="footer-copy">
-        &copy; 2026 EgoStrap. Not affiliated with Roblox Corporation.
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="docs.html">Docs</a>
-        <a href="faq.html">FAQ</a>
-        <a href="donate.html">Donate</a>
-      </div>
-    </div>
-  </footer>
+      setTimeout(() => {
+        launchStatus.innerHTML = '<span class="badge-dot" style="background:#10b981;"></span> Launching Roblox Player...';
+      }, 1200);
 
-  <script src="js/main.js"></script>
-</body>
-</html>
+      setTimeout(() => {
+        launchStatus.innerHTML = '<span class="badge-dot" style="background:#00d2ff;"></span> EgoStrap Hooked successfully!';
+        launchBtn.style.opacity = '1';
+        launchBtn.innerText = 'Active';
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+          launchStatus.innerHTML = originalStatusText;
+          launchBtn.innerText = 'Launch';
+          launching = false;
+        }, 3000);
+      }, 2500);
+    });
+  }
+}
+
+/**
+ * Futuristic card border mouse-glow effect tracker (updates relative coordinates)
+ */
+function setupMouseGlowCards() {
+  const cards = document.querySelectorAll('.feature-card, .donate-card, .timeline-content');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.style.setProperty('--x', `${x}px`);
+      card.style.setProperty('--y', `${y}px`);
+    });
+  });
+}
+
+/**
+ * Dynamic statistics counters for simulated usage activity
+ */
+function simulateStats() {
+  const downloadCount = document.getElementById('stat-dl-count');
+  const onlineCount = document.getElementById('stat-online-count');
+
+  // Base starting counts matching official stats
+  let dlNum = 245987;
+  let onlineNum = 14203;
+
+  if (downloadCount) downloadCount.innerText = dlNum.toLocaleString();
+  if (onlineCount) onlineCount.innerText = onlineNum.toLocaleString();
+
+  // Periodically increment stats dynamically to simulate active website usage
+  setInterval(() => {
+    if (downloadCount && Math.random() > 0.3) {
+      dlNum += Math.floor(Math.random() * 3) + 1;
+      downloadCount.innerText = dlNum.toLocaleString();
+    }
+    
+    if (onlineCount) {
+      const change = Math.floor(Math.random() * 11) - 5; // -5 to +5 change
+      onlineNum += change;
+      onlineCount.innerText = onlineNum.toLocaleString();
+    }
+  }, 4000);
+}

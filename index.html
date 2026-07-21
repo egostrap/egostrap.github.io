@@ -3,17 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EgoStrap — The Ultimate Roblox Customization Engine</title>
+  <title>EgoStrap Features — Roblox Client Tuning & Customization</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Styling Sheet -->
   <link rel="stylesheet" href="css/style.css">
-  
-  <!-- FontAwesome Icons for visual flair -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Unique styling for interactive Asset Previewer */
+    .preview-box {
+      background: var(--bg-panel-solid);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 30px;
+    }
+    
+    .preview-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .preview-control-group {
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(0,0,0,0.15);
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    .preview-control-group h4 {
+      font-size: 13px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-gray);
+    }
+
+    .preview-btn {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 13px;
+      transition: var(--transition-smooth);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .preview-btn:hover {
+      background: rgba(0, 102, 255, 0.1);
+      border-color: var(--accent-blue);
+    }
+
+    .preview-btn.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-cyan);
+    }
+
+    .preview-display {
+      background: #0d1117;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 250px;
+      transition: var(--transition-smooth);
+    }
+
+    /* Client Simulator states */
+    .preview-display.theme-cyber {
+      background: #02000a;
+      border-color: #ff007f;
+      box-shadow: inset 0 0 20px rgba(255,0,127,0.15);
+    }
+    .preview-display.theme-white {
+      background: #f8fafc;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+    .preview-display.theme-classic {
+      background: #111827;
+      border-color: #374151;
+    }
+
+    .client-ui-mockup {
+      width: 100%;
+      border-radius: 6px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.02);
+      transition: var(--transition-smooth);
+    }
+
+    .theme-white .client-ui-mockup {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+
+    .theme-cyber .client-ui-mockup {
+      border-color: #ff007f;
+      background: rgba(255,0,127,0.05);
+    }
+
+    .sound-ripple {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(0, 102, 255, 0.4);
+      border-radius: 50%;
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+
+    @keyframes ripple {
+      to {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        transform: scale(2.5);
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -53,258 +181,131 @@
     </nav>
   </header>
 
-  <!-- Hero Landing Section -->
-  <section class="container hero fade-in">
-    <div class="badge">
-      <span class="badge-dot"></span>
-      Safe & Client-Side Customization
-    </div>
+  <!-- Features Main Section -->
+  <main class="container fade-in" style="padding: 60px 24px;">
     
-    <h1 class="hero-title">
-      Your Roblox Client.<br>
-      <span>Fully Reimagined.</span>
-    </h1>
-    
-    <p class="hero-subtitle">
-      EgoStrap is an open-source Roblox bootstrapper focused on performance optimization, UI customization, account switching, and advanced control. Zero exploit injection, zero ban risk.
-    </p>
-    
-    <div class="hero-ctas">
-      <a href="download.html" class="btn btn-primary">
-        <i class="fa fa-download"></i> Get EgoStrap
-      </a>
-      <a href="features.html" class="btn btn-secondary">
-        Explore Features
-      </a>
-    </div>
-
-    <!-- Interactive Launcher UI Mockup -->
-    <div class="mockup-container">
-      <div class="launcher-mockup">
-        
-        <!-- Header -->
-        <div class="launcher-header">
-          <div class="mockup-title">
-            <img src="assets/logo.svg" alt="Icon" style="width:16px;height:16px;">
-            EgoStrap Config Dashboard
-          </div>
-          <div class="mockup-dots">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-yellow"></span>
-            <span class="dot dot-green"></span>
-          </div>
-        </div>
-        
-        <!-- Dashboard Body Grid -->
-        <div class="launcher-body">
-          
-          <!-- Sidebar Navigation -->
-          <div class="launcher-sidebar">
-            <div class="sidebar-item active" data-view="general">
-              <i class="fa fa-sliders"></i> General Settings
-            </div>
-            <div class="sidebar-item" data-view="customization">
-              <i class="fa fa-paint-brush"></i> Customization
-            </div>
-            <div class="sidebar-item" data-view="fastflags">
-              <i class="fa fa-code"></i> FastFlags Studio
-            </div>
-            <div class="sidebar-item" data-view="accounts">
-              <i class="fa fa-users"></i> Account Profiles
-            </div>
-          </div>
-          
-          <!-- View Context Views -->
-          <div class="launcher-content">
-            
-            <!-- General Settings View -->
-            <div class="launcher-view active" id="view-general">
-              <h3 class="view-title">General Settings</h3>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Automatic Client Updates</h4>
-                  <p>Keep EgoStrap updated to the latest build automatically.</p>
-                </div>
-                <label class="toggle-switch">
-                  <input type="checkbox" checked>
-                  <span class="slider"></span>
-                </label>
-              </div>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Discord Rich Presence</h4>
-                  <p>Display your active game state on Discord profile activity.</p>
-                </div>
-                <label class="toggle-switch">
-                  <input type="checkbox" checked>
-                  <span class="slider"></span>
-                </label>
-              </div>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Clear Roblox Cache</h4>
-                  <p>Wipe temporary asset caches to free disk space.</p>
-                </div>
-                <button class="btn-launch" style="padding:4px 12px; font-size:11px; background:#1e293b;">Clear</button>
-              </div>
-            </div>
-
-            <!-- Customization Settings View -->
-            <div class="launcher-view" id="view-customization">
-              <h3 class="view-title">Customization Pack</h3>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Choose Game Sound Pack</h4>
-                  <p>Restore the classic "Oof" sound effects.</p>
-                </div>
-                <select class="mockup-select">
-                  <option>Classic Oof (Pre-2022)</option>
-                  <option>Modern Chronos Sound</option>
-                  <option>Disabled</option>
-                </select>
-              </div>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Legacy Avatar Editor UI</h4>
-                  <p>Forces the client to load the nostalgic avatar customization screens.</p>
-                </div>
-                <label class="toggle-switch">
-                  <input type="checkbox">
-                  <span class="slider"></span>
-                </label>
-              </div>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Custom Client Fonts</h4>
-                  <p>Replace default Roblox client typeface system-wide.</p>
-                </div>
-                <select class="mockup-select">
-                  <option>Inter Display</option>
-                  <option>Segoe UI Semibold</option>
-                  <option>Comic Sans MS</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- FastFlags View -->
-            <div class="launcher-view" id="view-fastflags">
-              <h3 class="view-title">FastFlags Settings</h3>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Framerate Unlocker</h4>
-                  <p>Remove the 60fps limit to target maximum screen hz.</p>
-                </div>
-                <label class="toggle-switch">
-                  <input type="checkbox" checked>
-                  <span class="slider"></span>
-                </label>
-              </div>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Graphics Rendering Engine</h4>
-                  <p>Force Roblox to render using a specific Direct3D backend.</p>
-                </div>
-                <select class="mockup-select">
-                  <option>Vulkan (Optimized)</option>
-                  <option>Direct3D 11</option>
-                  <option>Direct3D 10</option>
-                </select>
-              </div>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Anti-Aliasing Algorithm</h4>
-                  <p>Force subpixel smoothing configurations.</p>
-                </div>
-                <select class="mockup-select">
-                  <option>MSAA 4x (Crisp)</option>
-                  <option>FXAA (Fast)</option>
-                  <option>No Overrides</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Account View -->
-            <div class="launcher-view" id="view-accounts">
-              <h3 class="view-title">Profile Account Manager</h3>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Main_Player</h4>
-                  <p>Active profile • Logged in via security cookie.</p>
-                </div>
-                <span class="badge" style="margin:0; padding:2px 10px; font-size:10px;">Primary</span>
-              </div>
-              <div class="setting-row">
-                <div class="setting-info">
-                  <h4>Trading_Alt01</h4>
-                  <p>Offline • Ready to swap.</p>
-                </div>
-                <button class="btn-launch" style="padding:4px 12px; font-size:11px; background:#0066ff;">Swap</button>
-              </div>
-              <button class="btn btn-secondary" style="margin-top: 10px; padding: 6px 14px; font-size: 12px;">
-                <i class="fa fa-plus"></i> Add Account Profile
-              </button>
-            </div>
-            
-            <!-- Dashboard Mockup Action Footer -->
-            <div class="launcher-footer">
-              <div class="launch-status">
-                <span class="badge-dot"></span> Ready to patch Roblox client
-              </div>
-              <button class="btn-launch">Launch Client</button>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Core Features Container -->
-  <section class="container" style="padding-top: 40px;">
     <div class="section-title-wrap">
-      <h2 class="section-title">Designed for Control</h2>
-      <p class="section-desc">EgoStrap sits adjacent to Roblox to tweak client settings, load sound assets, and manage launcher profiles natively.</p>
+      <div class="badge">Advanced Bootstrapper Suite</div>
+      <h1 class="section-title">Engineered to Outperform</h1>
+      <p class="section-desc">Explore the detailed features that make EgoStrap the leading client customizer for power users.</p>
     </div>
 
-    <div class="features-grid">
-      <!-- Feature Card 1 -->
+    <!-- Features list grid -->
+    <div class="features-grid" style="margin-bottom: 60px;">
+      
+      <!-- Safe client integration -->
       <div class="feature-card">
-        <div class="feature-icon"><i class="fa fa-bolt"></i></div>
-        <h3>Unlocked Framerates</h3>
-        <p>Break through the standard client locks. Target 144Hz, 240Hz, or higher and override resolution properties to make gameplay buttery smooth.</p>
+        <div class="feature-icon"><i class="fa fa-shield-check"></i></div>
+        <h3>Safe Client Integration</h3>
+        <p>
+          Unlike tools that inject dynamic link libraries (DLLs) or hook direct memory calls, EgoStrap interfaces only with legal bootstrapper parameters, local file modifications, and registry-level Roblox configs. It operates completely side-by-side with Roblox and is 100% compliant with anticheat guidelines.
+        </p>
       </div>
 
-      <!-- Feature Card 2 -->
+      <!-- FPS Unlocker -->
       <div class="feature-card">
-        <div class="feature-icon"><i class="fa fa-shield-halved"></i></div>
-        <h3>Anticheat Protected</h3>
-        <p>EgoStrap utilizes native bootloader configurations and local assets. It does not inject code, hooks, or libraries, keeping it completely exploit-free and safe from bans.</p>
+        <div class="feature-icon"><i class="fa fa-gauge-high"></i></div>
+        <h3>FPS Framerate Overrides</h3>
+        <p>
+          Tired of the rigid 60 frames-per-second lock? Overlap graphics settings to target high refresh rates. Configured to align with variables in the client engine, allowing you to maximize GPU utilization on top-tier screens.
+        </p>
       </div>
 
-      <!-- Feature Card 3 -->
+      <!-- Mod pack manager -->
       <div class="feature-card">
-        <div class="feature-icon"><i class="fa fa-folder-open"></i></div>
-        <h3>Mod Manager Studio</h3>
-        <p>Easily load custom audio assets, death sounds, visual textures, and GUI overrides directly into memory without modifying the client files.</p>
+        <div class="feature-icon"><i class="fa fa-toolbox"></i></div>
+        <h3>Dynamic Mod Studio</h3>
+        <p>
+          Organize overlays, custom death sounds, custom crosshairs, cursor icons, and map textures. Simply drop files in the mods folder. EgoStrap resolves asset priority paths and points Roblox directly to your assets.
+        </p>
       </div>
+
+      <!-- Account profiles -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-users-viewfinder"></i></div>
+        <h3>Profile Account Swapper</h3>
+        <p>
+          Switch between alternate accounts effortlessly. Save encrypted profiles on your local disk and swap sessions with a single button click. Say goodbye to signing out of the browser and re-entering 2FA codes.
+        </p>
+      </div>
+
+      <!-- Latency region selector -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-network-wired"></i></div>
+        <h3>Smart Region Filters</h3>
+        <p>
+          Track network nodes and target faster connection hubs. Set matchmaking filters to prioritize servers in regions closer to your actual location, resulting in lower latency, fewer lag spikes, and better connection stability.
+        </p>
+      </div>
+
+      <!-- FastFlags engine -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-terminal"></i></div>
+        <h3>FastFlags Console</h3>
+        <p>
+          Modify deep Roblox engine parameters directly. Toggle experimental graphics APIs (Vulkan, Direct3D 11/12), adjust lighting algorithms (Phase 3 Shadowmap overrides), tune network update frequencies, and adjust render distances.
+        </p>
+      </div>
+
     </div>
-  </section>
 
-  <!-- Stats & Discord Integration widget banner -->
-  <section class="container">
-    <div class="stats-banner">
-      <div class="stats-left">
-        <h2>Join the Community</h2>
-        <p>Get instant updates on updates, share custom configuration flags, trade client modifications, and get setup help directly from other players.</p>
+    <!-- Interactive Section: Asset Previewer Simulator -->
+    <div class="section-title-wrap" style="margin-top: 80px; margin-bottom: 20px;">
+      <h2 class="section-title">Interactive Asset Sandbox</h2>
+      <p class="section-desc">Test real sound synthesis modifications and client UI color theme overrides directly in this web sandbox.</p>
+    </div>
+
+    <!-- Sandbox Container -->
+    <div class="preview-box">
+      <div class="preview-controls">
         
-        <!-- Official Live Discord Widget Embed -->
-        <div class="discord-widget-wrapper" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: #090e1a; margin-top: 20px;">
-          <iframe src="https://discord.com/widget?id=1529151589561143417&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        <!-- UI Theme Override Control Group -->
+        <div class="preview-control-group">
+          <h4>Client Theme Override</h4>
+          <button class="preview-btn active" data-action="theme" data-value="classic">
+            <i class="fa fa-circle-half-stroke"></i> Default Dark theme
+          </button>
+          <button class="preview-btn" data-action="theme" data-value="cyber">
+            <i class="fa fa-bolt" style="color: #ff007f;"></i> Cyberpunk Pink (Custom)
+          </button>
+          <button class="preview-btn" data-action="theme" data-value="white">
+            <i class="fa fa-sun" style="color: #d97706;"></i> Clean Light (Custom)
+          </button>
+        </div>
+
+        <!-- Audio Override Control Group -->
+        <div class="preview-control-group">
+          <h4>Game Sound Pack Override</h4>
+          <button class="preview-btn" data-action="sound" data-value="oof">
+            <i class="fa fa-volume-high"></i> Classic "Oof" Sound
+          </button>
+          <button class="preview-btn" data-action="sound" data-value="pew">
+            <i class="fa fa-laser-blast"></i> Futuristic "Pew" Sound
+          </button>
+          <button class="preview-btn" data-action="sound" data-value="coin">
+            <i class="fa fa-coins"></i> Retro "Coin" Sound
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Simulation Display Area -->
+      <div class="preview-display theme-classic" id="sandbox-display">
+        <div class="client-ui-mockup">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(128,128,128,0.2); padding-bottom: 6px;">
+            <span style="font-weight: 700; font-size: 12px;"><i class="fa fa-gamepad"></i> Roblox Client Simulator</span>
+            <span style="font-size: 10px; color: var(--text-dim);" id="sandbox-theme-tag">Theme: Default Dark</span>
+          </div>
+          <p style="font-size: 13px; margin: 12px 0;" id="sandbox-status-text">Client connected. Waiting for patch triggers...</p>
+          <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; font-family: monospace; font-size: 11px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.03);" id="sandbox-log">
+            [SYS] Booting EgoStrap engine...
+          </div>
+          <button class="btn-launch" id="btn-sound-play" style="width: 100%; border-radius: 6px; padding: 10px;">Trigger Sound Event</button>
         </div>
       </div>
     </div>
-  </section>
+
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -325,7 +326,138 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/main.js"></script>
+  
+  <!-- Interactive Asset Previewer Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const display = document.getElementById('sandbox-display');
+      const themeTag = document.getElementById('sandbox-theme-tag');
+      const statusText = document.getElementById('sandbox-status-text');
+      const logBox = document.getElementById('sandbox-log');
+      const playBtn = document.getElementById('btn-sound-play');
+      
+      let activeSound = 'oof';
+      
+      // Web Audio API Synth to avoid downloading external files
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      
+      function playSynthSound(type) {
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        const now = audioCtx.currentTime;
+        
+        if (type === 'oof') {
+          // Classic Roblox "Oof" pitch modulation
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(130, now);
+          osc.frequency.exponentialRampToValueAtTime(320, now + 0.15);
+          
+          gain.gain.setValueAtTime(0.5, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+          
+          osc.start(now);
+          osc.stop(now + 0.2);
+        } else if (type === 'pew') {
+          // Retro laser pew sound
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(800, now);
+          osc.frequency.exponentialRampToValueAtTime(80, now + 0.3);
+          
+          gain.gain.setValueAtTime(0.3, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+          
+          osc.start(now);
+          osc.stop(now + 0.3);
+        } else if (type === 'coin') {
+          // Mario coin sound (two quick high notes)
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(987.77, now); // B5
+          osc.frequency.setValueAtTime(1318.51, now + 0.08); // E6
+          
+          gain.gain.setValueAtTime(0.3, now);
+          gain.gain.setValueAtTime(0.3, now + 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+          
+          osc.start(now);
+          osc.stop(now + 0.3);
+        }
+      }
+
+      // Handler for Themes
+      document.querySelectorAll('[data-action="theme"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Deactivate other theme buttons
+          document.querySelectorAll('[data-action="theme"]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          const theme = btn.getAttribute('data-value');
+          display.className = 'preview-display'; // Reset
+          display.classList.add(`theme-${theme}`);
+          
+          if (theme === 'classic') {
+            themeTag.innerText = 'Theme: Default Dark';
+            statusText.innerText = 'Dark themes loaded successfully.';
+            logBox.innerText = '[SYS] Applied Registry dark theme values.';
+            display.style.color = '#ffffff';
+          } else if (theme === 'cyber') {
+            themeTag.innerText = 'Theme: Cyberpunk Pink';
+            statusText.innerText = 'Futuristic Cyberpunk UI initialized.';
+            logBox.innerText = '[SYS] Loaded assets/custom_themes/cyberpink.json';
+            display.style.color = '#ff007f';
+          } else if (theme === 'white') {
+            themeTag.innerText = 'Theme: Clean Light';
+            statusText.innerText = 'Light mode override active.';
+            logBox.innerText = '[SYS] Warning: Blinding light mode active.';
+            display.style.color = '#0f172a';
+          }
+        });
+      });
+
+      // Handler for Sound Select
+      document.querySelectorAll('[data-action="sound"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-action="sound"]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          activeSound = btn.getAttribute('data-value');
+          statusText.innerText = `Selected Sound Pack: ${activeSound.toUpperCase()}`;
+          logBox.innerText = `[SYS] Audio descriptor pointed to assets/sounds/${activeSound}.wav`;
+          
+          playSynthSound(activeSound);
+        });
+      });
+
+      // Play Sound Action Trigger
+      playBtn.addEventListener('click', (e) => {
+        playSynthSound(activeSound);
+        
+        // Show visual ripple
+        const ripple = document.createElement('div');
+        ripple.classList.add('sound-ripple');
+        display.appendChild(ripple);
+        
+        const rect = display.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        ripple.style.left = `${x - 10}px`;
+        ripple.style.top = `${y - 10}px`;
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+      
+    });
+  </script>
 </body>
 </html>
