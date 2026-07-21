@@ -3,10 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download EgoStrap — Get the Roblox Bootstrapper</title>
+  <title>EgoStrap Features — Roblox Client Tuning & Customization</title>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Unique styling for interactive Asset Previewer */
+    .preview-box {
+      background: var(--bg-panel-solid);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 30px;
+    }
+    
+    .preview-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .preview-control-group {
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(0,0,0,0.15);
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    .preview-control-group h4 {
+      font-size: 13px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-gray);
+    }
+
+    .preview-btn {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 13px;
+      transition: var(--transition-smooth);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .preview-btn:hover {
+      background: rgba(0, 102, 255, 0.1);
+      border-color: var(--accent-blue);
+    }
+
+    .preview-btn.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-cyan);
+    }
+
+    .preview-display {
+      background: #0d1117;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 250px;
+      transition: var(--transition-smooth);
+    }
+
+    /* Client Simulator states */
+    .preview-display.theme-cyber {
+      background: #02000a;
+      border-color: #ff007f;
+      box-shadow: inset 0 0 20px rgba(255,0,127,0.15);
+    }
+    .preview-display.theme-white {
+      background: #f8fafc;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+    .preview-display.theme-classic {
+      background: #111827;
+      border-color: #374151;
+    }
+
+    .client-ui-mockup {
+      width: 100%;
+      border-radius: 6px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.02);
+      transition: var(--transition-smooth);
+    }
+
+    .theme-white .client-ui-mockup {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+
+    .theme-cyber .client-ui-mockup {
+      border-color: #ff007f;
+      background: rgba(255,0,127,0.05);
+    }
+
+    .sound-ripple {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(0, 102, 255, 0.4);
+      border-radius: 50%;
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+
+    @keyframes ripple {
+      to {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        transform: scale(2.5);
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -46,97 +181,128 @@
     </nav>
   </header>
 
-  <!-- Download Section Content -->
-  <main class="container dl-layout fade-in">
+  <!-- Features Main Section -->
+  <main class="container fade-in" style="padding: 60px 24px;">
     
-    <!-- Left panel (Downloader and Guides) -->
-    <div class="dl-card">
-      <div class="dl-header-wrap">
-        <div class="feature-icon" style="width: 60px; height: 60px; font-size: 30px;">
-          <i class="fa fa-download"></i>
-        </div>
-        <div class="dl-title-group">
-          <h1>Download EgoStrap</h1>
-          <div class="dl-meta">
-            <span>Current Version: <strong>v1.2.0 (Latest)</strong></span>
-            <span>•</span>
-            <span>Released: <strong>July 2026</strong></span>
-          </div>
-        </div>
+    <div class="section-title-wrap">
+      <div class="badge">Advanced Bootstrapper Suite</div>
+      <h1 class="section-title">Engineered to Outperform</h1>
+      <p class="section-desc">Explore the detailed features that make EgoStrap the leading client customizer for power users.</p>
+    </div>
+
+    <!-- Features list grid -->
+    <div class="features-grid" style="margin-bottom: 60px;">
+      
+      <!-- Safe client integration -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-shield-check"></i></div>
+        <h3>Safe Client Integration</h3>
+        <p>
+          Unlike tools that inject dynamic link libraries (DLLs) or hook direct memory calls, EgoStrap interfaces only with legal bootstrapper parameters, local file modifications, and registry-level Roblox configs. It operates completely side-by-side with Roblox and is 100% compliant with anticheat guidelines.
+        </p>
       </div>
 
-      <p style="color: var(--text-gray); margin-bottom: 30px;">
-        Get the most advanced Roblox bootstrapper package. Safe, lightweight, open-source. Select your preferred distribution type below.
-      </p>
-
-      <!-- Action items -->
-      <div class="dl-actions-grid">
-        
-        <!-- Stable EXE -->
-        <div class="dl-row">
-          <div>
-            <h3 style="font-size: 16px; margin-bottom: 2px;">EgoStrap Installer (.exe)</h3>
-            <p style="font-size: 12px; color: var(--text-dim);">Official setup executable for Windows 10 & 11. Includes automatic setup guide and shortcuts.</p>
-          </div>
-          <div class="dl-btn-group">
-            <a href="https://github.com/egostrap/egostrap.github.io/releases/download/v1.2.0/EgoStrap-Setup.exe" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">
-              <i class="fa fa-download"></i> Download Installer
-            </a>
-          </div>
-        </div>
-
+      <!-- FPS Unlocker -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-gauge-high"></i></div>
+        <h3>FPS Framerate Overrides</h3>
+        <p>
+          Tired of the rigid 60 frames-per-second lock? Overlap graphics settings to target high refresh rates. Configured to align with variables in the client engine, allowing you to maximize GPU utilization on top-tier screens.
+        </p>
       </div>
 
-      <!-- Installation Guide -->
-      <div class="dl-guide">
-        <h2>Quick Installation Guide</h2>
-        <ol class="dl-steps">
-          <li>Download the <strong>EgoStrap-Setup.exe</strong> package.</li>
-          <li>Run the installer. If prompted by Windows Defender SmartScreen, select <strong>More Info</strong> and click <strong>Run Anyway</strong> (occurs because the installer is fresh and unsigned).</li>
-          <li>The EgoStrap Dashboard will open automatically. Customize your settings, toggle FPS limits, and click <strong>Launch Roblox</strong>!</li>
-        </ol>
+      <!-- Mod pack manager -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-toolbox"></i></div>
+        <h3>Dynamic Mod Studio</h3>
+        <p>
+          Organize overlays, custom death sounds, custom crosshairs, cursor icons, and map textures. Simply drop files in the mods folder. EgoStrap resolves asset priority paths and points Roblox directly to your assets.
+        </p>
+      </div>
+
+      <!-- Account profiles -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-users-viewfinder"></i></div>
+        <h3>Profile Account Swapper</h3>
+        <p>
+          Switch between alternate accounts effortlessly. Save encrypted profiles on your local disk and swap sessions with a single button click. Say goodbye to signing out of the browser and re-entering 2FA codes.
+        </p>
+      </div>
+
+      <!-- Latency region selector -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-network-wired"></i></div>
+        <h3>Smart Region Filters</h3>
+        <p>
+          Track network nodes and target faster connection hubs. Set matchmaking filters to prioritize servers in regions closer to your actual location, resulting in lower latency, fewer lag spikes, and better connection stability.
+        </p>
+      </div>
+
+      <!-- FastFlags engine -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-terminal"></i></div>
+        <h3>FastFlags Console</h3>
+        <p>
+          Modify deep Roblox engine parameters directly. Toggle experimental graphics APIs (Vulkan, Direct3D 11/12), adjust lighting algorithms (Phase 3 Shadowmap overrides), tune network update frequencies, and adjust render distances.
+        </p>
       </div>
 
     </div>
 
-    <!-- Right panel (Sidebar info) -->
-    <div class="dl-sidebar">
-      
-      <!-- System Specs -->
-      <div class="sidebar-box">
-        <h3>System Requirements</h3>
-        <div class="spec-list">
-          <div class="spec-item">
-            <span class="spec-label">Operating System</span>
-            <span class="spec-val">Windows 10 / 11 (64-bit)</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Roblox Engine</span>
-            <span class="spec-val">Web Client Compatible</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Dependencies</span>
-            <span class="spec-val">.NET Desktop Runtime 6.0+</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">File Size</span>
-            <span class="spec-val">~ 4.2 MB (Installer)</span>
-          </div>
+    <!-- Interactive Section: Asset Previewer Simulator -->
+    <div class="section-title-wrap" style="margin-top: 80px; margin-bottom: 20px;">
+      <h2 class="section-title">Interactive Asset Sandbox</h2>
+      <p class="section-desc">Test real sound synthesis modifications and client UI color theme overrides directly in this web sandbox.</p>
+    </div>
+
+    <!-- Sandbox Container -->
+    <div class="preview-box">
+      <div class="preview-controls">
+        
+        <!-- UI Theme Override Control Group -->
+        <div class="preview-control-group">
+          <h4>Client Theme Override</h4>
+          <button class="preview-btn active" data-action="theme" data-value="classic">
+            <i class="fa fa-circle-half-stroke"></i> Default Dark theme
+          </button>
+          <button class="preview-btn" data-action="theme" data-value="cyber">
+            <i class="fa fa-bolt" style="color: #ff007f;"></i> Cyberpunk Pink (Custom)
+          </button>
+          <button class="preview-btn" data-action="theme" data-value="white">
+            <i class="fa fa-sun" style="color: #d97706;"></i> Clean Light (Custom)
+          </button>
         </div>
+
+        <!-- Audio Override Control Group -->
+        <div class="preview-control-group">
+          <h4>Game Sound Pack Override</h4>
+          <button class="preview-btn" data-action="sound" data-value="oof">
+            <i class="fa fa-volume-high"></i> Classic "Oof" Sound
+          </button>
+          <button class="preview-btn" data-action="sound" data-value="pew">
+            <i class="fa fa-laser-blast"></i> Futuristic "Pew" Sound
+          </button>
+          <button class="preview-btn" data-action="sound" data-value="coin">
+            <i class="fa fa-coins"></i> Retro "Coin" Sound
+          </button>
+        </div>
+
       </div>
 
-      <!-- File integrity verification -->
-      <div class="sidebar-box">
-        <h3>Release Checksum</h3>
-        <p style="font-size: 11px; color: var(--text-gray); line-height: 1.5; margin-bottom: 12px;">
-          Verify file security using SHA-256 hash to guarantee it hasn't been tampered with:
-        </p>
-        <div style="font-family: monospace; font-size: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 6px; word-break: break-all; color: var(--accent-cyan);">
-          EgoStrap-Setup.exe<br>
-          <span style="color: var(--text-gray);">8f5c9e2b10a267cd40de55fa9897bb2101fa2d057a62df8bbcc1e628469e38fd</span>
+      <!-- Simulation Display Area -->
+      <div class="preview-display theme-classic" id="sandbox-display">
+        <div class="client-ui-mockup">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(128,128,128,0.2); padding-bottom: 6px;">
+            <span style="font-weight: 700; font-size: 12px;"><i class="fa fa-gamepad"></i> Roblox Client Simulator</span>
+            <span style="font-size: 10px; color: var(--text-dim);" id="sandbox-theme-tag">Theme: Default Dark</span>
+          </div>
+          <p style="font-size: 13px; margin: 12px 0;" id="sandbox-status-text">Client connected. Waiting for patch triggers...</p>
+          <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; font-family: monospace; font-size: 11px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.03);" id="sandbox-log">
+            [SYS] Booting EgoStrap engine...
+          </div>
+          <button class="btn-launch" id="btn-sound-play" style="width: 100%; border-radius: 6px; padding: 10px;">Trigger Sound Event</button>
         </div>
       </div>
-
     </div>
 
   </main>
@@ -161,5 +327,137 @@
   </footer>
 
   <script src="js/main.js"></script>
+  
+  <!-- Interactive Asset Previewer Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const display = document.getElementById('sandbox-display');
+      const themeTag = document.getElementById('sandbox-theme-tag');
+      const statusText = document.getElementById('sandbox-status-text');
+      const logBox = document.getElementById('sandbox-log');
+      const playBtn = document.getElementById('btn-sound-play');
+      
+      let activeSound = 'oof';
+      
+      // Web Audio API Synth to avoid downloading external files
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      
+      function playSynthSound(type) {
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        const now = audioCtx.currentTime;
+        
+        if (type === 'oof') {
+          // Classic Roblox "Oof" pitch modulation
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(130, now);
+          osc.frequency.exponentialRampToValueAtTime(320, now + 0.15);
+          
+          gain.gain.setValueAtTime(0.5, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+          
+          osc.start(now);
+          osc.stop(now + 0.2);
+        } else if (type === 'pew') {
+          // Retro laser pew sound
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(800, now);
+          osc.frequency.exponentialRampToValueAtTime(80, now + 0.3);
+          
+          gain.gain.setValueAtTime(0.3, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+          
+          osc.start(now);
+          osc.stop(now + 0.3);
+        } else if (type === 'coin') {
+          // Mario coin sound (two quick high notes)
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(987.77, now); // B5
+          osc.frequency.setValueAtTime(1318.51, now + 0.08); // E6
+          
+          gain.gain.setValueAtTime(0.3, now);
+          gain.gain.setValueAtTime(0.3, now + 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+          
+          osc.start(now);
+          osc.stop(now + 0.3);
+        }
+      }
+
+      // Handler for Themes
+      document.querySelectorAll('[data-action="theme"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Deactivate other theme buttons
+          document.querySelectorAll('[data-action="theme"]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          const theme = btn.getAttribute('data-value');
+          display.className = 'preview-display'; // Reset
+          display.classList.add(`theme-${theme}`);
+          
+          if (theme === 'classic') {
+            themeTag.innerText = 'Theme: Default Dark';
+            statusText.innerText = 'Dark themes loaded successfully.';
+            logBox.innerText = '[SYS] Applied Registry dark theme values.';
+            display.style.color = '#ffffff';
+          } else if (theme === 'cyber') {
+            themeTag.innerText = 'Theme: Cyberpunk Pink';
+            statusText.innerText = 'Futuristic Cyberpunk UI initialized.';
+            logBox.innerText = '[SYS] Loaded assets/custom_themes/cyberpink.json';
+            display.style.color = '#ff007f';
+          } else if (theme === 'white') {
+            themeTag.innerText = 'Theme: Clean Light';
+            statusText.innerText = 'Light mode override active.';
+            logBox.innerText = '[SYS] Warning: Blinding light mode active.';
+            display.style.color = '#0f172a';
+          }
+        });
+      });
+
+      // Handler for Sound Select
+      document.querySelectorAll('[data-action="sound"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-action="sound"]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          activeSound = btn.getAttribute('data-value');
+          statusText.innerText = `Selected Sound Pack: ${activeSound.toUpperCase()}`;
+          logBox.innerText = `[SYS] Audio descriptor pointed to assets/sounds/${activeSound}.wav`;
+          
+          playSynthSound(activeSound);
+        });
+      });
+
+      // Play Sound Action Trigger
+      playBtn.addEventListener('click', (e) => {
+        playSynthSound(activeSound);
+        
+        // Show visual ripple
+        const ripple = document.createElement('div');
+        ripple.classList.add('sound-ripple');
+        display.appendChild(ripple);
+        
+        const rect = display.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        ripple.style.left = `${x - 10}px`;
+        ripple.style.top = `${y - 10}px`;
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+      
+    });
+  </script>
 </body>
 </html>

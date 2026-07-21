@@ -3,27 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate to EgoStrap — Support Development</title>
+  <title>EgoStrap FAQ — Frequently Asked Questions</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    .copy-btn {
-      background: var(--accent-blue);
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 11px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: var(--transition-smooth);
-      margin-top: 8px;
-    }
-    .copy-btn:hover {
-      background: #0056cc;
-    }
-  </style>
 </head>
 <body>
 
@@ -63,62 +50,110 @@
     </nav>
   </header>
 
-  <!-- Donate Page Content -->
-  <main class="container fade-in" style="padding: 60px 24px; max-width: 900px;">
+  <!-- FAQ Main section -->
+  <main class="container fade-in" style="padding: 60px 24px;">
     
     <div class="section-title-wrap">
-      <div class="badge">Support Open Source</div>
-      <h1 class="section-title">Cryptocurrency Donations</h1>
-      <p class="section-desc">EgoStrap is free and open-source. We accept contributions exclusively via Cryptocurrency (ETH, SOL, BTC) to fund development and hosting infrastructure.</p>
+      <div class="badge">Common Questions</div>
+      <h1 class="section-title">Frequently Asked Questions</h1>
+      <p class="section-desc">Got a question? We have answers. If you can't find what you need here, join our official Discord server.</p>
     </div>
 
-    <!-- Crypto Only Donation Cards Grid -->
-    <div class="donate-grid">
+    <!-- Search Input -->
+    <div class="faq-search-wrap">
+      <i class="fa fa-search faq-search-icon"></i>
+      <input type="text" class="faq-search-input" placeholder="Search FAQ articles (e.g., ban, fps, mods)...">
+    </div>
+
+    <!-- FAQ Accordion container -->
+    <div class="faq-container">
       
-      <!-- Ethereum (ETH) -->
-      <div class="donate-card">
-        <div class="feature-icon" style="background: rgba(98, 126, 234, 0.1); color: #627eea; border-color: rgba(98, 126, 234, 0.3);">
-          <i class="fab fa-ethereum"></i>
+      <!-- FAQ Item 1 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Can I get banned for using EgoStrap?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
         </div>
-        <h2 class="donate-platform">Ethereum (ETH)</h2>
-        <p class="donate-desc">Ethereum mainnet and ERC-20 token contributions.</p>
-        
-        <div class="donate-crypto-addr" id="eth-address">0xf9D0eD039d17A0Ca4E48B6D6C09FBf04374448cD</div>
-        <button class="copy-btn" data-target="eth-address">Copy ETH Address</button>
+        <div class="faq-answer">
+          <p>
+            <strong>No, you cannot be banned for using EgoStrap.</strong> Roblox's anti-cheat software (Hyperion) targets software that injects code, reads/writes runtime memory (such as exploits or cheat modules), or executes arbitrary scripts inside Roblox servers. 
+          </p>
+          <br>
+          <p>
+            EgoStrap is client-side only. It works side-by-side with Roblox by modifying startup arguments, configuring FastFlags (settings native to the game engine), and overriding local files in your system directories. It does not touch active memory or behave like an exploit.
+          </p>
+        </div>
       </div>
 
-      <!-- Solana (SOL) -->
-      <div class="donate-card">
-        <div class="feature-icon" style="background: rgba(20, 241, 149, 0.1); color: #14f195; border-color: rgba(20, 241, 149, 0.3);">
-          <i class="fa fa-bolt"></i>
+      <!-- FAQ Item 2 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Does EgoStrap cost money?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
         </div>
-        <h2 class="donate-platform">Solana (SOL)</h2>
-        <p class="donate-desc">High-speed Solana network SPL token contributions.</p>
-        
-        <div class="donate-crypto-addr" id="sol-address">EKBY959bdZha67HVA9attG6cBJTnYPsrtjyRhv6xxF1D</div>
-        <button class="copy-btn" data-target="sol-address">Copy SOL Address</button>
+        <div class="faq-answer">
+          <p>
+            No, EgoStrap is entirely free and open-source. We do not lock features behind paywalls, run advertising scripts, or charge subscriptions. If you would like to support development servers and domain costs, you can make a small contribution on our <a href="donate.html" style="color: var(--accent-cyan); text-decoration: none;">Donate page</a>.
+          </p>
+        </div>
       </div>
 
-      <!-- Bitcoin (BTC) -->
-      <div class="donate-card">
-        <div class="feature-icon" style="background: rgba(247, 147, 26, 0.1); color: #f7931a; border-color: rgba(247, 147, 26, 0.3);">
-          <i class="fab fa-bitcoin"></i>
+      <!-- FAQ Item 3 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How do I unlock my FPS with EgoStrap?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
         </div>
-        <h2 class="donate-platform">Bitcoin (BTC)</h2>
-        <p class="donate-desc">Direct Bitcoin blockchain network transactions.</p>
-        
-        <div class="donate-crypto-addr" id="btc-address">bc1qgkk23lmdhrjrx4x7mlg252zqez8zahlq8r4nfx</div>
-        <button class="copy-btn" data-target="btc-address">Copy BTC Address</button>
+        <div class="faq-answer">
+          <p>
+            Unlocking FPS is enabled by default when you install EgoStrap. You can adjust your framerate preferences inside the EgoStrap Config Dashboard by navigating to the <strong>FastFlags Studio</strong> tab, toggling the <strong>Framerate Unlocker</strong> setting, and setting your target value (e.g., 144, 240, or 9999 for unlimited).
+          </p>
+        </div>
       </div>
 
-    </div>
+      <!-- FAQ Item 4 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How do I import custom sounds and textures?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            It is simple! Open the EgoStrap Dashboard, navigate to the Customization tab, and click <strong>Open Mods Folder</strong>. Drop your audio wave files into the `sounds` directory, or override image panels in the `textures` folder. The bootstrapper handles mapping them to Roblox at startup automatically. See our <a href="docs.html#mods" style="color: var(--accent-cyan); text-decoration: none;">Mods Documentation</a> for details.
+          </p>
+        </div>
+      </div>
 
-    <!-- What donations support info -->
-    <div style="background: var(--bg-panel); border: 1px solid var(--border-subtle); padding: 32px; border-radius: 12px; margin-top: 40px; text-align: center;">
-      <h3 style="font-family: var(--font-title); font-size: 18px; margin-bottom: 12px;"><i class="fa fa-shield-halved" style="color: var(--accent-cyan);"></i> Decentralized Support</h3>
-      <p style="color: var(--text-gray); font-size: 13px; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-        Cryptocurrency donations help maintain domain registrations, patch distribution endpoints, and cloud database infrastructure. Thank you for supporting open-source software!
-      </p>
+      <!-- FAQ Item 5 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Does EgoStrap run on macOS or Mobile devices?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Currently, EgoStrap only supports Windows (Windows 10 and 11, 64-bit systems). macOS and mobile operating systems utilize different launcher file distribution standards that do not support custom bootstrapper handler redirection.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 6 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Why does my antivirus flag EgoStrap?</h3>
+          <i class="fa fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Because EgoStrap edits client registry parameters, creates folder hooks, and launches background threads to check for updates, some aggressive antivirus software (such as Windows Defender SmartScreen) may flag the installation. 
+          </p>
+          <br>
+          <p>
+            EgoStrap is fully open-source. You can inspect every line of code on our official GitHub repository to verify its safety. If flagged, you can safely select "Run Anyway" or add EgoStrap to your antivirus exemption list.
+          </p>
+        </div>
+      </div>
+
     </div>
 
   </main>
@@ -144,30 +179,47 @@
 
   <script src="js/main.js"></script>
   
-  <!-- Clipboard copier for ETH, SOL, BTC -->
+  <!-- Accordion and Search script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const copyBtns = document.querySelectorAll('.copy-btn');
+      const faqItems = document.querySelectorAll('.faq-item');
+      const searchInput = document.querySelector('.faq-search-input');
 
-      copyBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const targetId = btn.getAttribute('data-target');
-          const address = document.getElementById(targetId).innerText;
-
-          navigator.clipboard.writeText(address).then(() => {
-            const originalText = btn.innerText;
-            btn.innerText = 'Address Copied!';
-            btn.style.background = '#10b981';
-            
-            setTimeout(() => {
-              btn.innerText = originalText;
-              btn.style.background = 'var(--accent-blue)';
-            }, 2000);
-          }).catch(err => {
-            console.error('Failed to copy: ', err);
-          });
+      // Set first item active by default
+      if (faqItems.length > 0) {
+        faqItems[0].classList.add('active');
+      }
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Collapse other active accordion tabs
+          faqItems.forEach(i => i.classList.remove('active'));
+          
+          if (!isActive) {
+            item.classList.add('active');
+          }
         });
       });
+
+      // Filter FAQ items dynamically
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          
+          faqItems.forEach(item => {
+            const questionText = item.querySelector('.faq-question h3').textContent.toLowerCase();
+            const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+            
+            if (questionText.includes(query) || answerText.includes(query)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
     });
   </script>
 </body>

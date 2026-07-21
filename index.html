@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EgoStrap FAQ — Frequently Asked Questions</title>
+  <title>EgoStrap — The Ultimate Roblox Customization Engine</title>
   
-  <link class="style" rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styling Sheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- FontAwesome Icons for visual flair -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -46,113 +53,258 @@
     </nav>
   </header>
 
-  <!-- FAQ Main section -->
-  <main class="container fade-in" style="padding: 60px 24px;">
+  <!-- Hero Landing Section -->
+  <section class="container hero fade-in">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Safe & Client-Side Customization
+    </div>
     
+    <h1 class="hero-title">
+      Your Roblox Client.<br>
+      <span>Fully Reimagined.</span>
+    </h1>
+    
+    <p class="hero-subtitle">
+      EgoStrap is an open-source Roblox bootstrapper focused on performance optimization, UI customization, account switching, and advanced control. Zero exploit injection, zero ban risk.
+    </p>
+    
+    <div class="hero-ctas">
+      <a href="download.html" class="btn btn-primary">
+        <i class="fa fa-download"></i> Get EgoStrap
+      </a>
+      <a href="features.html" class="btn btn-secondary">
+        Explore Features
+      </a>
+    </div>
+
+    <!-- Interactive Launcher UI Mockup -->
+    <div class="mockup-container">
+      <div class="launcher-mockup">
+        
+        <!-- Header -->
+        <div class="launcher-header">
+          <div class="mockup-title">
+            <img src="assets/logo.svg" alt="Icon" style="width:16px;height:16px;">
+            EgoStrap Config Dashboard
+          </div>
+          <div class="mockup-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+        </div>
+        
+        <!-- Dashboard Body Grid -->
+        <div class="launcher-body">
+          
+          <!-- Sidebar Navigation -->
+          <div class="launcher-sidebar">
+            <div class="sidebar-item active" data-view="general">
+              <i class="fa fa-sliders"></i> General Settings
+            </div>
+            <div class="sidebar-item" data-view="customization">
+              <i class="fa fa-paint-brush"></i> Customization
+            </div>
+            <div class="sidebar-item" data-view="fastflags">
+              <i class="fa fa-code"></i> FastFlags Studio
+            </div>
+            <div class="sidebar-item" data-view="accounts">
+              <i class="fa fa-users"></i> Account Profiles
+            </div>
+          </div>
+          
+          <!-- View Context Views -->
+          <div class="launcher-content">
+            
+            <!-- General Settings View -->
+            <div class="launcher-view active" id="view-general">
+              <h3 class="view-title">General Settings</h3>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Automatic Client Updates</h4>
+                  <p>Keep EgoStrap updated to the latest build automatically.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Discord Rich Presence</h4>
+                  <p>Display your active game state on Discord profile activity.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Clear Roblox Cache</h4>
+                  <p>Wipe temporary asset caches to free disk space.</p>
+                </div>
+                <button class="btn-launch" style="padding:4px 12px; font-size:11px; background:#1e293b;">Clear</button>
+              </div>
+            </div>
+
+            <!-- Customization Settings View -->
+            <div class="launcher-view" id="view-customization">
+              <h3 class="view-title">Customization Pack</h3>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Choose Game Sound Pack</h4>
+                  <p>Restore the classic "Oof" sound effects.</p>
+                </div>
+                <select class="mockup-select">
+                  <option>Classic Oof (Pre-2022)</option>
+                  <option>Modern Chronos Sound</option>
+                  <option>Disabled</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Legacy Avatar Editor UI</h4>
+                  <p>Forces the client to load the nostalgic avatar customization screens.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Custom Client Fonts</h4>
+                  <p>Replace default Roblox client typeface system-wide.</p>
+                </div>
+                <select class="mockup-select">
+                  <option>Inter Display</option>
+                  <option>Segoe UI Semibold</option>
+                  <option>Comic Sans MS</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- FastFlags View -->
+            <div class="launcher-view" id="view-fastflags">
+              <h3 class="view-title">FastFlags Settings</h3>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Framerate Unlocker</h4>
+                  <p>Remove the 60fps limit to target maximum screen hz.</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Graphics Rendering Engine</h4>
+                  <p>Force Roblox to render using a specific Direct3D backend.</p>
+                </div>
+                <select class="mockup-select">
+                  <option>Vulkan (Optimized)</option>
+                  <option>Direct3D 11</option>
+                  <option>Direct3D 10</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Anti-Aliasing Algorithm</h4>
+                  <p>Force subpixel smoothing configurations.</p>
+                </div>
+                <select class="mockup-select">
+                  <option>MSAA 4x (Crisp)</option>
+                  <option>FXAA (Fast)</option>
+                  <option>No Overrides</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Account View -->
+            <div class="launcher-view" id="view-accounts">
+              <h3 class="view-title">Profile Account Manager</h3>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Main_Player</h4>
+                  <p>Active profile • Logged in via security cookie.</p>
+                </div>
+                <span class="badge" style="margin:0; padding:2px 10px; font-size:10px;">Primary</span>
+              </div>
+              <div class="setting-row">
+                <div class="setting-info">
+                  <h4>Trading_Alt01</h4>
+                  <p>Offline • Ready to swap.</p>
+                </div>
+                <button class="btn-launch" style="padding:4px 12px; font-size:11px; background:#0066ff;">Swap</button>
+              </div>
+              <button class="btn btn-secondary" style="margin-top: 10px; padding: 6px 14px; font-size: 12px;">
+                <i class="fa fa-plus"></i> Add Account Profile
+              </button>
+            </div>
+            
+            <!-- Dashboard Mockup Action Footer -->
+            <div class="launcher-footer">
+              <div class="launch-status">
+                <span class="badge-dot"></span> Ready to patch Roblox client
+              </div>
+              <button class="btn-launch">Launch Client</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Container -->
+  <section class="container" style="padding-top: 40px;">
     <div class="section-title-wrap">
-      <div class="badge">Common Questions</div>
-      <h1 class="section-title">Frequently Asked Questions</h1>
-      <p class="section-desc">Got a question? We have answers. If you can't find what you need here, join our official Discord server.</p>
+      <h2 class="section-title">Designed for Control</h2>
+      <p class="section-desc">EgoStrap sits adjacent to Roblox to tweak client settings, load sound assets, and manage launcher profiles natively.</p>
     </div>
 
-    <!-- Search Input -->
-    <div class="faq-search-wrap">
-      <i class="fa fa-search faq-search-icon"></i>
-      <input type="text" class="faq-search-input" placeholder="Search FAQ articles (e.g., ban, fps, mods)...">
+    <div class="features-grid">
+      <!-- Feature Card 1 -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-bolt"></i></div>
+        <h3>Unlocked Framerates</h3>
+        <p>Break through the standard client locks. Target 144Hz, 240Hz, or higher and override resolution properties to make gameplay buttery smooth.</p>
+      </div>
+
+      <!-- Feature Card 2 -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-shield-halved"></i></div>
+        <h3>Anticheat Protected</h3>
+        <p>EgoStrap utilizes native bootloader configurations and local assets. It does not inject code, hooks, or libraries, keeping it completely exploit-free and safe from bans.</p>
+      </div>
+
+      <!-- Feature Card 3 -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-folder-open"></i></div>
+        <h3>Mod Manager Studio</h3>
+        <p>Easily load custom audio assets, death sounds, visual textures, and GUI overrides directly into memory without modifying the client files.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- FAQ Accordion container -->
-    <div class="faq-container">
-      
-      <!-- FAQ Item 1 -->
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Can I get banned for using EgoStrap?</h3>
-          <i class="fa fa-chevron-down faq-chevron"></i>
-        </div>
-        <div class="faq-answer">
-          <p>
-            <strong>No, you cannot be banned for using EgoStrap.</strong> Roblox's anti-cheat software (Hyperion) targets software that injects code, reads/writes runtime memory (such as exploits or cheat modules), or executes arbitrary scripts inside Roblox servers. 
-          </p>
-          <br>
-          <p>
-            EgoStrap is client-side only. It works side-by-side with Roblox by modifying startup arguments, configuring FastFlags (settings native to the game engine), and overriding local files in your system directories. It does not touch active memory or behave like an exploit.
-          </p>
+  <!-- Stats & Discord Integration widget banner -->
+  <section class="container">
+    <div class="stats-banner">
+      <div class="stats-left">
+        <h2>Join the Community</h2>
+        <p>Get instant updates on updates, share custom configuration flags, trade client modifications, and get setup help directly from other players.</p>
+        
+        <!-- Official Live Discord Widget Embed -->
+        <div class="discord-widget-wrapper" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: #090e1a; margin-top: 20px;">
+          <iframe src="https://discord.com/widget?id=1529151589561143417&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
       </div>
-
-      <!-- FAQ Item 2 -->
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Does EgoStrap cost money?</h3>
-          <i class="fa fa-chevron-down faq-chevron"></i>
-        </div>
-        <div class="faq-answer">
-          <p>
-            No, EgoStrap is entirely free and open-source. We do not lock features behind paywalls, run advertising scripts, or charge subscriptions. If you would like to support development servers and domain costs, you can make a small contribution on our <a href="donate.html" style="color: var(--accent-cyan); text-decoration: none;">Donate page</a>.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 3 -->
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>How do I unlock my FPS with EgoStrap?</h3>
-          <i class="fa fa-chevron-down faq-chevron"></i>
-        </div>
-        <div class="faq-answer">
-          <p>
-            Unlocking FPS is enabled by default when you install EgoStrap. You can adjust your framerate preferences inside the EgoStrap Config Dashboard by navigating to the <strong>FastFlags Studio</strong> tab, toggling the <strong>Framerate Unlocker</strong> setting, and setting your target value (e.g., 144, 240, or 9999 for unlimited).
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 4 -->
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>How do I import custom sounds and textures?</h3>
-          <i class="fa fa-chevron-down faq-chevron"></i>
-        </div>
-        <div class="faq-answer">
-          <p>
-            It is simple! Open the EgoStrap Dashboard, navigate to the Customization tab, and click <strong>Open Mods Folder</strong>. Drop your audio wave files into the `sounds` directory, or override image panels in the `textures` folder. The bootstrapper handles mapping them to Roblox at startup automatically. See our <a href="docs.html#mods" style="color: var(--accent-cyan); text-decoration: none;">Mods Documentation</a> for details.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 5 -->
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Does EgoStrap run on macOS or Mobile devices?</h3>
-          <i class="fa fa-chevron-down faq-chevron"></i>
-        </div>
-        <div class="faq-answer">
-          <p>
-            Currently, EgoStrap only supports Windows (Windows 10 and 11, 64-bit systems). macOS and mobile operating systems utilize different launcher file distribution standards that do not support custom bootstrapper handler redirection.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 6 -->
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Why does my antivirus flag EgoStrap?</h3>
-          <i class="fa fa-chevron-down faq-chevron"></i>
-        </div>
-        <div class="faq-answer">
-          <p>
-            Because EgoStrap edits client registry parameters, creates folder hooks, and launches background threads to check for updates, some aggressive antivirus software (such as Windows Defender SmartScreen) may flag the installation. 
-          </p>
-          <br>
-          <p>
-            EgoStrap is fully open-source. You can inspect every line of code on our official GitHub repository to verify its safety. If flagged, you can safely select "Run Anyway" or add EgoStrap to your antivirus exemption list.
-          </p>
-        </div>
-      </div>
-
     </div>
-
-  </main>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -173,47 +325,7 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="js/main.js"></script>
-  
-  <!-- Accordion and Search script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const faqItems = document.querySelectorAll('.faq-item');
-      const searchInput = document.querySelector('.faq-search-input');
-
-      // Toggling Active state on Accordion click
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
-          
-          // Collapse other active accordion tabs
-          faqItems.forEach(i => i.classList.remove('active'));
-          
-          if (!isActive) {
-            item.classList.add('active');
-          }
-        });
-      });
-
-      // Filter FAQ items dynamically
-      if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-          const query = e.target.value.toLowerCase().trim();
-          
-          faqItems.forEach(item => {
-            const questionText = item.querySelector('.faq-question h3').textContent.toLowerCase();
-            const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
-            
-            if (questionText.includes(query) || answerText.includes(query)) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      }
-    });
-  </script>
 </body>
 </html>

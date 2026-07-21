@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EgoStrap Documentation — Getting Started & Configuration Guides</title>
+  <title>Download EgoStrap — Get the Roblox Bootstrapper</title>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -46,234 +49,98 @@
     </nav>
   </header>
 
-  <!-- Docs Layout Container -->
-  <main class="container docs-layout fade-in">
+  <!-- Download Section Content -->
+  <main class="container dl-layout fade-in">
     
-    <!-- Sidebar Navigation -->
-    <aside class="docs-sidebar">
-      
-      <!-- Doc Search -->
-      <div class="docs-search-box">
-        <i class="fa fa-search"></i>
-        <input type="text" class="docs-search" placeholder="Search documentation...">
+    <!-- Left panel (Downloader and Guides) -->
+    <div class="dl-card">
+      <div class="dl-header-wrap">
+        <div class="feature-icon" style="width: 60px; height: 60px; font-size: 30px;">
+          <i class="fa fa-download"></i>
+        </div>
+        <div class="dl-title-group">
+          <h1>Download EgoStrap</h1>
+          <div class="dl-meta">
+            <span>Current Version: <strong>v1.2.0 (Latest)</strong></span>
+            <span>•</span>
+            <span>Released: <strong>July 2026</strong></span>
+          </div>
+        </div>
       </div>
 
-      <nav class="docs-menu">
+      <p style="color: var(--text-gray); margin-bottom: 30px;">
+        Get the most advanced Roblox bootstrapper package. Safe, lightweight, open-source. Select your preferred distribution type below.
+      </p>
+
+      <!-- Action items -->
+      <div class="dl-actions-grid">
         
-        <!-- Category: Getting Started -->
-        <div>
-          <h4 class="docs-cat-title">Getting Started</h4>
-          <div class="docs-links-group">
-            <a class="docs-link active" data-target="installation">Installation Guide</a>
-            <a class="docs-link" data-target="first-launch">First Launch Info</a>
-            <a class="docs-link" data-target="settings-guide">Core Settings</a>
+        <!-- Stable EXE -->
+        <div class="dl-row">
+          <div>
+            <h3 style="font-size: 16px; margin-bottom: 2px;">EgoStrap Installer (.exe)</h3>
+            <p style="font-size: 12px; color: var(--text-dim);">Official setup executable for Windows 10 & 11. Includes automatic setup guide and shortcuts.</p>
+          </div>
+          <div class="dl-btn-group">
+            <a href="https://github.com/egostrap/egostrap.github.io/releases/download/v1.2.0/EgoStrap-Setup.exe" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">
+              <i class="fa fa-download"></i> Download Installer
+            </a>
           </div>
         </div>
 
-        <!-- Category: Features -->
-        <div>
-          <h4 class="docs-cat-title">Features Guide</h4>
-          <div class="docs-links-group">
-            <a class="docs-link" data-target="themes">Custom UI Themes</a>
-            <a class="docs-link" data-target="mods">Mod Manager Studio</a>
-            <a class="docs-link" data-target="profiles">Account Profiles</a>
-          </div>
-        </div>
+      </div>
 
-        <!-- Category: Advanced -->
-        <div>
-          <h4 class="docs-cat-title">Advanced Tuning</h4>
-          <div class="docs-links-group">
-            <a class="docs-link" data-target="fastflags">FastFlags Studio</a>
-            <a class="docs-link" data-target="vulkan-dx">Vulkan & D3D Tuning</a>
-            <a class="docs-link" data-target="troubleshooting">Troubleshooting</a>
-          </div>
-        </div>
+      <!-- Installation Guide -->
+      <div class="dl-guide">
+        <h2>Quick Installation Guide</h2>
+        <ol class="dl-steps">
+          <li>Download the <strong>EgoStrap-Setup.exe</strong> package.</li>
+          <li>Run the installer. If prompted by Windows Defender SmartScreen, select <strong>More Info</strong> and click <strong>Run Anyway</strong> (occurs because the installer is fresh and unsigned).</li>
+          <li>The EgoStrap Dashboard will open automatically. Customize your settings, toggle FPS limits, and click <strong>Launch Roblox</strong>!</li>
+        </ol>
+      </div>
 
-      </nav>
-    </aside>
+    </div>
 
-    <!-- Docs Content Area -->
-    <section class="docs-content">
+    <!-- Right panel (Sidebar info) -->
+    <div class="dl-sidebar">
       
-      <!-- ARTICLE: Installation -->
-      <article class="docs-section active" id="installation">
-        <h1>Installation Guide</h1>
-        <p>EgoStrap is designed to be lightweight and simple to set up. It doesn't modify the Roblox launcher files permanently; instead, it registers as a custom bootstrapper handler.</p>
-        
-        <div class="docs-callout docs-callout-info">
-          <h4><i class="fa fa-info-circle"></i> Microsoft .NET Framework Requirement</h4>
-          <p>EgoStrap requires the Microsoft .NET Desktop Runtime 6.0 or higher. Most Windows 10 & 11 PCs have this pre-installed, but if yours lacks it, the installer will guide you through downloading it.</p>
+      <!-- System Specs -->
+      <div class="sidebar-box">
+        <h3>System Requirements</h3>
+        <div class="spec-list">
+          <div class="spec-item">
+            <span class="spec-label">Operating System</span>
+            <span class="spec-val">Windows 10 / 11 (64-bit)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Roblox Engine</span>
+            <span class="spec-val">Web Client Compatible</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Dependencies</span>
+            <span class="spec-val">.NET Desktop Runtime 6.0+</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">File Size</span>
+            <span class="spec-val">~ 4.2 MB (Installer)</span>
+          </div>
         </div>
+      </div>
 
-        <h2>Step-by-Step Installation</h2>
-        <ol>
-          <li>Navigate to the <a href="download.html" style="color: var(--accent-cyan); text-decoration: none;">Download Page</a> and download <strong>EgoStrap-Setup.exe</strong>.</li>
-          <li>Double-click the downloaded installer.</li>
-          <li>Windows SmartScreen may trigger a warning because EgoStrap is a newer, open-source utility without an expensive digital signing certificate. Click <strong>More Info</strong>, then click <strong>Run Anyway</strong>.</li>
-          <li>Select the installation directory (we recommend keeping the default: `%localappdata%\EgoStrap`).</li>
-          <li>The program will run a brief installation procedure, configure the handler protocol, and load the dashboard interface.</li>
-        </ol>
-
-        <h2>Uninstalling EgoStrap</h2>
-        <p>If you wish to restore the stock Roblox bootstrapper settings:</p>
-        <ol>
-          <li>Open the EgoStrap Config Dashboard.</li>
-          <li>Go to the bottom of the General tab, and click <strong>Uninstall</strong>.</li>
-          <li>EgoStrap will cleanly unregister its custom handlers, restore standard Roblox launcher defaults, and wipe its directory. No stray registry keys or cache folders are left behind.</li>
-        </ol>
-      </article>
-
-      <!-- ARTICLE: First Launch Info -->
-      <article class="docs-section" id="first-launch">
-        <h1>First Launch Guide</h1>
-        <p>Once installation finishes, you will be greeted by the EgoStrap Config Dashboard. This is your control hub for Roblox.</p>
-        
-        <h2>How EgoStrap Handles Roblox Starts</h2>
-        <p>EgoStrap registers the custom URI handler protocol `roblox-player:`. Whenever you click **Play** on the Roblox website or open the Roblox Desktop shortcut, Windows directs the request to EgoStrap instead of the default Roblox bootstrapper.</p>
-        
-        <h2>What happens during boot?</h2>
-        <ol>
-          <li>EgoStrap launches in the background.</li>
-          <li>It scans for Roblox client updates on the official Roblox deployment servers.</li>
-          <li>It injects custom mods, configurations, fonts, and client settings locally.</li>
-          <li>It unlocks framerates by writing dynamic configurations to client settings.</li>
-          <li>It launches the official Roblox Player process.</li>
-        </ol>
-
-        <div class="docs-callout docs-callout-warning">
-          <h4><i class="fa fa-triangle-exclamation"></i> Do Not Launch as Administrator</h4>
-          <p>Running EgoStrap with administrator privileges can prevent it from communicating with browser launch protocols. Run the application normally as a standard user.</p>
+      <!-- File integrity verification -->
+      <div class="sidebar-box">
+        <h3>Release Checksum</h3>
+        <p style="font-size: 11px; color: var(--text-gray); line-height: 1.5; margin-bottom: 12px;">
+          Verify file security using SHA-256 hash to guarantee it hasn't been tampered with:
+        </p>
+        <div style="font-family: monospace; font-size: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 6px; word-break: break-all; color: var(--accent-cyan);">
+          EgoStrap-Setup.exe<br>
+          <span style="color: var(--text-gray);">8f5c9e2b10a267cd40de55fa9897bb2101fa2d057a62df8bbcc1e628469e38fd</span>
         </div>
-      </article>
+      </div>
 
-      <!-- ARTICLE: Core Settings -->
-      <article class="docs-section" id="settings-guide">
-        <h1>Core Settings Guide</h1>
-        <p>EgoStrap's General settings tab houses options for adjusting how the bootstrapper behaves during startup and interacts with external widgets.</p>
-        
-        <h2>Automatic Client Updates</h2>
-        <p>Roblox pushes mandatory updates multiple times a week. With Auto-Updates toggled on, EgoStrap detects outdated builds during launch, downloads only the modified asset chunks, updates them locally, and runs the game in seconds.</p>
-
-        <h2>Discord Rich Presence (DRP)</h2>
-        <p>Let your friends see what you are playing! DRP displays the name of the place, your current character thumbnail, active session duration, and server status on your Discord profile automatically.</p>
-        <p>To configure DRP, open the General tab, toggle <strong>Discord Rich Presence</strong>, and restart the client. Make sure Discord is running and game status display is enabled in Discord user settings.</p>
-      </article>
-
-      <!-- ARTICLE: Themes -->
-      <article class="docs-section" id="themes">
-        <h1>Custom UI Themes</h1>
-        <p>EgoStrap allows you to customize the bootstrapper's appearance and elements of the Roblox game interface natively.</p>
-
-        <h2>Modifying the Bootstrapper Theme</h2>
-        <p>You can select color themes directly inside the Dashboard. Custom styles adjust borders, backdrop grids, typography, and active highlights. Supported themes include Dark, Light, Cyberpunk Pink, and Minimal Blue.</p>
-
-        <h2>Sound Overrides</h2>
-        <p>Roblox replaced the classic "Oof" sound with a modern sound in 2022. EgoStrap lets you restore the classic "Oof" sound natively. In the customization tab, select <strong>Classic Oof (Pre-2022)</strong>. EgoStrap will override the sound asset locally during launch.</p>
-      </article>
-
-      <!-- ARTICLE: Mods -->
-      <article class="docs-section" id="mods">
-        <h1>Mod Manager Studio</h1>
-        <p>EgoStrap has a dedicated Mod Manager folder. Drop custom files in the folders, and EgoStrap mounts them over standard Roblox files dynamically when launching.</p>
-
-        <h2>How to Install Custom Mods</h2>
-        <ol>
-          <li>Open the EgoStrap Dashboard.</li>
-          <li>Go to the Customization/Mod tab, and click <strong>Open Mods Folder</strong>.</li>
-          <li>A folder window will open on your PC. It contains folders for:
-            <ul>
-              <li>`sounds/` — Drop custom wave/mp3 sounds.</li>
-              <li>`textures/` — Replace cursor styles, character overlays, etc.</li>
-              <li>`fonts/` — Install custom typefaces.</li>
-            </ul>
-          </li>
-          <li>Move your custom assets into the respective folder.</li>
-          <li>Launch the game. EgoStrap loads your custom modifications automatically!</li>
-        </ol>
-      </article>
-
-      <!-- ARTICLE: Profiles -->
-      <article class="docs-section" id="profiles">
-        <h1>Account Profiles Manager</h1>
-        <p>Play on multiple accounts? EgoStrap has a secure local profile manager that lets you switch accounts without entering your credentials repeatedly in a browser.</p>
-
-        <div class="docs-callout docs-callout-warning">
-          <h4><i class="fa fa-lock"></i> Security and Cookie Encryption</h4>
-          <p>EgoStrap stores login session tokens locally on your PC inside a securely encrypted database. They are only ever shared directly with Roblox's authentication endpoints, never with any third-party servers.</p>
-        </div>
-
-        <h2>Adding and Swapping Accounts</h2>
-        <ol>
-          <li>Log into your Roblox account in your browser.</li>
-          <li>Open the EgoStrap Dashboard, navigate to the <strong>Account Profiles</strong> tab.</li>
-          <li>Click <strong>Import Active Browser Session</strong>. EgoStrap will automatically identify your active session token.</li>
-          <li>Name the profile (e.g., "AltAccount01").</li>
-          <li>To swap accounts, select the profile in EgoStrap and click <strong>Activate</strong>. The next time you hit play, Roblox will load with that account!</li>
-        </ol>
-      </article>
-
-      <!-- ARTICLE: FastFlags -->
-      <article class="docs-section" id="fastflags">
-        <h1>FastFlags configurations</h1>
-        <p>FastFlags are configurations used by Roblox developers to control game engine features. EgoStrap gives you a user-friendly panel to modify these values directly.</p>
-
-        <h2>Common FastFlags Settings</h2>
-        <ul>
-          <li><strong>Unlock Framerate:</strong> Removes the 60fps limit and enables high framerates.</li>
-          <li><strong>Render Distance Scale:</strong> Extends rendering capabilities, allowing you to see objects further away.</li>
-          <li><strong>Shadow Mapping Precision:</strong> Toggles high-resolution shadows for cleaner graphics.</li>
-        </ul>
-
-        <h2>Importing Custom FastFlag Lists</h2>
-        <p>If you have a custom JSON list of FastFlags, you can import it into EgoStrap:</p>
-        <div class="docs-code">
-{
-  "DFIntTaskSchedulerTargetFps": 9999,
-  "FFlagDebugGraphicsDisableDirect3D10": "True",
-  "FFlagDisablePostFx": "True"
-}
-        </div>
-        <p>Go to the FastFlags console, click <strong>Import JSON</strong>, paste your configurations, and click <strong>Save</strong>.</p>
-      </article>
-
-      <!-- ARTICLE: Vulkan & D3D -->
-      <article class="docs-section" id="vulkan-dx">
-        <h1>Vulkan & D3D Graphics Tuning</h1>
-        <p>Roblox auto-selects your graphics engine API, which doesn't always yield the best performance on all graphics cards. EgoStrap lets you override the backend rendering engine.</p>
-
-        <h2>API Profiles</h2>
-        <ol>
-          <li><strong>Vulkan:</strong> Excellent performance on AMD graphics cards and modern PCs. Provides higher frame rates but may cause stuttering on older Nvidia GPUs.</li>
-          <li><strong>Direct3D 11:</strong> The default rendering engine. Very stable, good for standard hardware.</li>
-          <li><strong>Direct3D 12:</strong> Best for modern Windows 10/11 PCs with dedicated GPUs, supporting advanced shader pipelines.</li>
-        </ol>
-        <p>Modify these settings in the <strong>FastFlags Studio</strong> tab inside the Config Dashboard.</p>
-      </article>
-
-      <!-- ARTICLE: Troubleshooting -->
-      <article class="docs-section" id="troubleshooting">
-        <h1>Troubleshooting Guide</h1>
-        <p>Encountering issues with EgoStrap? Here are solutions to common problems.</p>
-
-        <h2>Roblox Launches with stock settings (No FPS Unlock / Mods)</h2>
-        <p>This typically occurs if the file handler association is broken. To fix this:</p>
-        <ol>
-          <li>Open the EgoStrap Dashboard.</li>
-          <li>Click the <strong>Repair Handler Links</strong> button in the bottom-left of the Dashboard.</li>
-          <li>Select <strong>Yes</strong> when prompted for handler repair.</li>
-        </ol>
-
-        <h2>Game Crashes on Launch</h2>
-        <p>If your game crashes immediately during startup, it is likely caused by an invalid or corrupted FastFlag configuration.</p>
-        <ol>
-          <li>Open the Dashboard and go to the <strong>FastFlags Studio</strong> tab.</li>
-          <li>Click <strong>Reset to Defaults</strong> to clear all custom flag overrides.</li>
-          <li>Attempt to launch the game again.</li>
-        </ol>
-      </article>
-
-    </section>
+    </div>
 
   </main>
 
@@ -297,6 +164,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/docs.js"></script>
 </body>
 </html>

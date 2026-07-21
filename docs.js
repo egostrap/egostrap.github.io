@@ -1432,3 +1432,107 @@ footer {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* --- FAQ ACCORDION & SEARCH STYLES --- */
+.faq-search-wrap {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+.faq-search-input {
+  width: 100%;
+  padding: 14px 20px 14px 48px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 14.5px;
+  backdrop-filter: blur(12px);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.faq-search-input:focus {
+  border-color: #0066ff;
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.35);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.faq-search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 14px;
+}
+
+.faq-container {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: rgba(10, 16, 32, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item:hover {
+  border-color: rgba(0, 102, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.12);
+}
+
+.faq-item.active {
+  background: rgba(12, 20, 42, 0.92);
+  border-color: rgba(0, 210, 255, 0.5);
+  box-shadow: 0 6px 25px rgba(0, 210, 255, 0.15);
+}
+
+.faq-question {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-question h3 {
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.faq-chevron {
+  color: #00d2ff;
+  font-size: 14px;
+  transition: transform 0.35s ease;
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  color: #94a3b8;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 24px 24px 24px;
+}
